@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pintar Sehat</title>
+  <link rel="icon" href="http://localhost/rumah-sakit/uploads/settings/logo12.png" type="image/x-icon">
+  <link href="http://localhost/rumah-sakit/assets/css/ataaka.min.css" rel="stylesheet">
+  <link href="http://localhost/rumah-sakit/assets/css/animate.min.css" rel="stylesheet">
+  <link href="http://localhost/rumah-sakit/themes/admin/css/style.css" rel="stylesheet">
+  <link href="http://localhost/rumah-sakit/assets/css/font-awesome.css" rel="stylesheet">
+  <!-- PWA Support -->
+  <link rel="manifest" href="http://localhost/rumah-sakit/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Pintar Sehat" />
+  <meta name="apple-mobile-web-app-title" content="Pintar Sehat" />
+  <meta name="theme-color" content="#222" />
+  <meta name="msapplication-navbutton-color" content="#222" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="green-translucent" />
+  <meta name="msapplication-starturl" content="http://localhost/rumah-sakit" />
+  <!-- End PWA Support -->
+  <script src="http://localhost/rumah-sakit/assets/jscripts/jquery.min.js"></script>
+  <script src="http://localhost/rumah-sakit/assets/jscripts/bootstrap.min.js"></script>
+  <script src="http://localhost/rumah-sakit/assets/jscripts/bootbox.min.js"></script>
+  <script src="http://localhost/rumah-sakit/assets/jscripts/html.sortable.min.js"></script>
+  <script src="http://localhost/rumah-sakit/assets/jscripts/tinynav.min.js"></script>
+  <script src="http://localhost/rumah-sakit/themes/admin/js/kalypto.min.js"></script>
+  <script src="http://localhost/rumah-sakit/themes/admin/js/selectator.js"></script>
+  <style>
+    body {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+    }
+
+    body:before {
+      content: "";
+      position: absolute;
+      background: url('http://localhost/rumah-sakit/uploads/settings/bg.png');
+      background-size: cover;
+      z-index: -1;
+      /* Keep the background behind the content */
+      height: 20%;
+      width: 20%;
+      /* Using Glen Maddern's trick /via @mente */
+
+      /* don't forget to use the prefixes you need */
+      transform: scale(5);
+      transform-origin: top left;
+      filter: blur(2px);
+    }
+  </style>
+
+</head>
+
+<body>
+  <section id="login" style="margin-top: -50px;">
+    <div class="panel panel-default">
+      <div class="panel-heading" style="background: transparent;">
+        <img src="http://localhost/rumah-sakit/uploads/settings/logo12.png" alt="logo">
+        <h2
+          style="margin-top:0;color: white;text-shadow: -1px -1px 0 #000080, 1px -1px 0 #000080, -1px 1px 0 #000080, 1px 1px 0 #000080;">
+          Pintar<span>Sehat</span></h2>
+      </div>
+      <div class="panel-body" style="border-radius: 20px;padding:30px;box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);">
+        <form action="http://localhost/rumah-sakit/admin/" method="POST">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon" style="border-right: none;background:white;"><i class="fa fa-user"></i>
+              </div>
+              <input style="border-left: none;" type="text" name="username" class="form-control"
+                placeholder="Nama Pengguna" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon" style="border-right: none;background:white;"><i class="fa fa-lock"></i>
+              </div>
+              <input style="border-left: none;" type="password" name="password" class="form-control"
+                placeholder="Password" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="remember-me pull-left">
+              <input type="checkbox" name="remember_me" />
+              Ingat saya
+            </label>
+            <button type="submit" name="login" class="btn btn-primary pull-right"
+              style="border-radius: 10px;background:#000080">Sign In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+      </section>
+  <div id="wrapper">
+
+    <!-- <div id="navbar-wrapper">
+      <nav class="navbar navbar-inverse mobile-fixed-top hidden-lg hidden-md" style="z-index:1000;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#">
+              <img class="logo" src="http://localhost/rumah-sakit/uploads/settings/logo12.png" alt="">
+              <span class="navbar-brand truncated"> pintar sehat </span>
+            </a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="fa fa-key" data-toggle="modal" data-target="#menuModal" title="Login"></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top visible-lg visible-md" style="margin-bottom:0;font-size:16px;">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a href="#" data-toggle="modal" data-target="#menuModal"><img class="img-responsive"
+                src="http://localhost/rumah-sakit/assets/img/icon-home.png"
+                style="display:inline-block;height:24px;margin-top:-2px;margin-right:5px;" alt=""> Menu</a></li>
+                    <li><a href="#" class="btn disabled"><img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-pasien.png"
+                alt=""> Pasien</a></li>
+                              <li><a href="#" class="btn disabled"><img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-igd.png"
+                alt=""> IGD</a></li>
+                              <li><a href="#" class="btn disabled"><img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-ralan.png"
+                alt=""> Rawat Jalan</a></li>
+                              <li><a href="#" class="btn disabled"><img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-ranap.png"
+                alt=""> Rawat Inap</a></li>
+                              <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="menu_icon"
+                src="http://localhost/rumah-sakit/assets/img/icon-informasi.png" alt=""> Anjungan
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                            <li><a href="http://localhost/rumah-sakit/anjungan/presensi" target="_blank">Presensi Pegawai</a></li>
+              <li role="separator" class="divider"></li>
+                            <li><a href="#">Rawat Jalan</a></li>
+              <li><a href="#">Rawat Inap</a></li>
+              <li><a href="#">Laboratorium</a></li>
+              <li><a href="#">Radiologi</a></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/bed" target="_blank">Ketersediaan Kamar</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/pasien" target="_blank">Anjungan Pasien Mandiri</a></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/sep" target="_blank">Anjungan Cetak SEP</a></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/loket" target="_blank">Antrian Loket</a></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/laboratorium" target="_blank">Antrian Laboratorium</a></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/apotek" target="_blank">Antrian Apotek</a></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/poli" target="_blank">Antrian Poliklinik</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="http://localhost/rumah-sakit/anjungan/poli/all" target="_blank">Antrian Poliklinik Alternatif</a></li>
+                                                                                                              </ul>
+          </li>
+                    <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="menu_icon"
+                src="http://localhost/rumah-sakit/assets/img/icon-about.png" alt=""> Pintar Sehat
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-toggle="modal" data-target="#tentangModal"> Tentang</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#bantuanModal"> Bantuan</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#menuModal"> Login</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" class="fa fa-key" data-toggle="modal" data-target="#menuModal" title="Login"></a></li>
+        </ul>
+      </div>
+    </nav> -->
+
+    <div class="dashboard_wall">
+      <!-- <img src="http://localhost/rumah-sakit/uploads/settings/logo12.png" class="logo" width="120px" alt="">
+      <p class="title"><b style="color: black;">pintar sehat</b></p>
+      <p class="alamat"><b style="color: black;">jalan hj.rekan pondok benda - pamulang - tangerang selatan</b></p> -->
+    </div>
+
+
+  </div>
+
+
+  <div class="icon-bar hidden-lg hidden-md">
+    <a href="#" data-toggle="modal" data-target="#menuModal"><i class="fa fa-home"></i></a>
+    <a href="#" class="btn disabled"><i class="fa fa-users"></i></a>
+    <a href="#" class="btn disabled"><i class="fa fa-ambulance"></i></a>
+    <a href="#" class="btn disabled"><i class="fa fa-wheelchair"></i></a>
+    <a href="#" class="btn disabled"><i class="fa fa-hotel"></i></a>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade modal-xs" id="menuModal" tabindex="-1" role="dialog">
+    <div id="login">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <img src="http://localhost/rumah-sakit/uploads/settings/logo12.png" alt="logo">
+          <h2>Pintar<span>Sehat</span></h2>
+        </div>
+        <div class="panel-body">
+          <form action="http://localhost/rumah-sakit/admin/" method="POST">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                <input type="text" name="username" class="form-control" placeholder="Nama Pengguna" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                <input type="password" name="password" class="form-control" placeholder="Password" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="remember-me pull-left">
+                <input type="checkbox" name="remember_me" />
+                Ingat saya
+              </label>
+              <button type="submit" name="login" class="btn btn-primary pull-right">Sign In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+          </div>
+  </div>
+  <div class="modal fade" id="bantuanModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Bantuan Pintar Sehat</h4>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="tentangModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xs" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Tentang Pintar Sehat</h4>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="http://localhost/rumah-sakit/themes/admin/img/logo.png" width="50px" alt="">
+            <h4>
+              Pintar Sehat
+              <div class="">
+                <small>
+                  2023-01-01 00:00:01                </small>
+              </div>
+            </h4>
+            <p>The awesome HIS alternate<br>
+              Clean, Light and Modular Medical Management Systems</p>
+            <p>Made with <i class="fa fa-heart text-danger"></i> and <i class="fa fa-coffee text-primary"></i> by <a
+                href="https://basoro.id/" target="_blank"><b>drg. F. Basoro</b></a> & Friends.</p>
+            <p>Thank you to our main sponsors <span class="badge badge-info badge-style-light">RSUD H. Damanhuri
+                Barabai</span> and <span class="badge badge-warning badge-style-light">RS Aura Syifa Kediri</span>. Also
+              the Klinik Utama Cahaya Imani Kandangan, RSIA Muntilan Magelang, RSU Ceria Kandangan, RSUD Datu Sanggul
+              Rantau, RSUD Daha Sejahtera Kandangan and other hospitals that we cannot mention one by one. Also
+              contributors who have been involved in development.</p>
+            <p>Email: dentix.id@gmail.com - Telegram: @basoro</p>
+            <p>Copyright © 2018 - 2023</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Support -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("http://localhost/rumah-sakit/service-worker.js")
+          .then((swReg) => {
+            //console.log("Service Worker is registered", swReg);
+          })
+          .catch((err) => {
+            //console.error("Service Worker Error", err);
+          });
+      });
+    }
+  </script>
+  <!-- End PWA Support -->
+  <script src="http://localhost/rumah-sakit/themes/admin/js/scripts.js"></script>
+</body>
+
+</html>

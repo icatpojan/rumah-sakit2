@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pintar sehat</title>
+  <link rel="icon" href="http://localhost/rumah-sakit/uploads/settings/logo12.png" type="image/x-icon">
+  <link href="http://localhost/rumah-sakit/assets/css/ataaka.min.css" rel="stylesheet">
+  <link href="http://localhost/rumah-sakit/themes/admin/css/style.css?v=2023-01-01 00:00:01" rel="stylesheet">
+  <link href="http://localhost/rumah-sakit/assets/css/font-awesome.css" rel="stylesheet">
+  <!-- PWA Support -->
+  <link rel="manifest" href="http://localhost/rumah-sakit/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Pintar Sehat" />
+  <meta name="apple-mobile-web-app-title" content="Pintar Sehat" />
+  <meta name="theme-color" content="#222" />
+  <meta name="msapplication-navbutton-color" content="#222" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="green-translucent" />
+  <meta name="msapplication-starturl" content="http://localhost/rumah-sakit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" sizes="128x128" href="http://localhost/rumah-sakit/assets/images/icon-128x128.png" />
+  <link rel="apple-touch-icon" sizes="128x128" href="http://localhost/rumah-sakit/assets/images/icon-128x128.png" />
+  <link rel="icon" sizes="192x192" href="http://localhost/rumah-sakit/assets/images/icon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="http://localhost/rumah-sakit/assets/images/icon-192x192.png" />
+  <link rel="icon" sizes="256x256" href="http://localhost/rumah-sakit/assets/images/icon-256x256.png" />
+  <link rel="apple-touch-icon" sizes="256x256" href="http://localhost/rumah-sakit/assets/images/icon-256x256.png" />
+  <link rel="icon" sizes="384x384" href="http://localhost/rumah-sakit/assets/images/icon-384x384.png" />
+  <link rel="apple-touch-icon" sizes="384x384" href="http://localhost/rumah-sakit/assets/images/icon-384x384.png" />
+  <link rel="icon" sizes="512x512" href="http://localhost/rumah-sakit/assets/images/icon-512x512.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="http://localhost/rumah-sakit/assets/images/icon-512x512.png" />
+  <!-- End PWA Support -->
+  <script src="http://localhost/rumah-sakit/assets/jscripts/jquery.min.js?v=2023-01-01 00:00:01"></script>
+  <script src="http://localhost/rumah-sakit/themes/admin/js/kalypto.min.js?v=2023-01-01 00:00:01"></script>
+  <style>
+    body {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+    }
+
+    body:before {
+      content: "";
+      position: absolute;
+      background: url('http://localhost/rumah-sakit/uploads/settings/bg.png');
+      background-size: cover;
+      z-index: -1;
+      /* Keep the background behind the content */
+      height: 20%;
+      width: 20%;
+      /* Using Glen Maddern's trick /via @mente */
+
+      /* don't forget to use the prefixes you need */
+      transform: scale(5);
+      transform-origin: top left;
+      filter: blur(2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="login">
+    <div class="panel panel-default">
+      <div class="panel-heading" style="background: transparent;">
+        <img src="http://localhost/rumah-sakit/uploads/settings/logo12.png" alt="logo">
+        <h2 style="color: white;text-shadow: -1px -1px 0 #000080, 1px -1px 0 #000080, -1px 1px 0 #000080, 1px 1px 0 #000080;">
+          Pintar<span>Sehat</span></h2>
+      </div>
+      <div class="panel-body" style="border-radius: 20px;padding:30px;box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);">
+        <form action="/rumah-sakit/admin/pasien/manage?t=b991b6a203b2" method="POST">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon" style="border-right: none;background:white;"><i class="fa fa-user"></i></div>
+              <input style="border-left: none;" type="text" name="username" class="form-control"
+                placeholder="Nama Pengguna" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon" style="border-right: none;background:white;"><i class="fa fa-lock"></i></div>
+              <input style="border-left: none;" type="password" name="password" class="form-control"
+                placeholder="Password" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="remember-me pull-left">
+              <input type="checkbox" name="remember_me" />
+              Ingat saya
+            </label>
+            <button type="submit" name="login" class="btn btn-primary pull-right">Sign In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+      </section>
+
+  <!-- <footer class="visible-lg visible-md bg-primary" style="padding-bottom:30px;z-index:1000;">
+    <p class="pull-right">
+      Made with <i class="fa fa-heart text-danger"></i> by <a href="https://basoro.id/" target="_blank"><b>drg. F.
+          Basoro</b>.</a>
+      Powered by <a href="https://mlite.id/">Pintar Sehat</a>.
+    </p>
+  </footer> -->
+
+  <!-- PWA Support -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("http://localhost/rumah-sakit/service-worker.js")
+          .then((swReg) => {
+            //console.log("Service Worker is registered", swReg);
+          })
+          .catch((err) => {
+            //console.error("Service Worker Error", err);
+          });
+      });
+    }
+  </script>
+  <!-- End PWA Support -->
+
+  <script>
+    $(':checkbox').kalypto();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<article class="row">
+    <form action="http://localhost/rumah-sakit/admin/api/saveSettingsApam?t=55c8d0157b3d" method="POST">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pengaturan Modul API</h3>
+                </div>
+            	  <div class="panel-body">
+                    <div class="form-group">
+                        <label>APAM Security Key</label>
+                        <input type="text" name="api[apam_key]" class="form-control" value="qtbexUAxzqO3M8dCOo2vDMFvgYjdUEdMLVo341"/>
+                    </div>
+                    <div class="form-group">
+                        <label>APAM Status Daftar</label>
+                        <input type="text" name="api[apam_status_daftar]" class="form-control" value="Terdaftar"/>
+                    </div>
+                    <div class="form-group">
+                        <label>APAM Status Dilayani</label>
+                        <input type="text" name="api[apam_status_dilayani]" class="form-control" value="Anda siap dilayani"/>
+                    </div>
+                    <div class="form-group">
+                        <label>APAM Webapps URL</label>
+                        <input type="text" name="api[apam_webappsurl]" class="form-control" value="http://localhost/webapps/"/>
+                    </div>
+                    <div class="form-group">
+                        <label>APAM No RM Petugas</label>
+                        <input type="text" name="api[apam_normpetugas]" class="form-control" value="000001,000002"/>
+                        <p>Pisahkan dengan tanda koma</p>
+                    </div>
+                    <div class="form-group">
+                        <label>APAM Limit Kuota</label>
+                        <input type="text" name="api[apam_limit]" class="form-control" value="2"/>
+                        <p>Limit untuk kuota. Misal 2 (50%), 4 (25%) dari kuota dalam jadwal</p>
+                    </div>
+                    <div class="form-group">
+                        <label>SMTP Server</label>
+                        <input type="text" name="api[apam_smtp_host]" class="form-control" value="ssl://smtp.gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>SMTP Port</label>
+                        <input type="text" name="api[apam_smtp_port]" class="form-control" value="465">
+                    </div>
+                    <div class="form-group">
+                        <label>SMTP Username</label>
+                        <input type="text" name="api[apam_smtp_username]" class="form-control" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>SMTP Password</label>
+                        <input type="text" name="api[apam_smtp_password]" class="form-control" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Cara Bayar APAM</label>
+                        <select name="api[apam_kdpj]" class="form-control">
+                                                      <option value="-">-</option>
+                                                      <option value="BPJ">BPJS Kesehatan</option>
+                                                      <option value="UMU">Umum</option>
+                                                  </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="propinsi">Kode Propinsi</label>
+                        <input type="hidden" name="nm_prop" id="nm_prop" class="form-control" value="" />
+                        <input type="text" name="api[apam_kdprop]" id="kd_prop" class="form-control" value="" />
+                        <ul class="list-group" id="propinsiList" style="z-index:1000;position:absolute;width:100%;"></ul>
+                    </div>
+                    <div class="form-group">
+                        <label for="kota">Kode Kota/Kabupaten</label>
+                        <input type="hidden" name="nm_kab" id="nm_kab" class="form-control" value="" />
+                        <input type="text" name="api[apam_kdkab]" id="kd_kab" class="form-control" value="" />
+                        <ul class="list-group" id="kabupatenList" style="z-index:1000;position:absolute;width:100%;"></ul>
+                    </div>
+                    <div class="form-group">
+                        <label for="kecamatan">Kode Kecamatan</label>
+                        <input type="hidden" name="nm_kec" id="nm_kec" class="form-control" value="" />
+                        <input type="text" name="api[apam_kdkec]" id="kd_kec" class="form-control" value="" />
+                        <ul class="list-group" id="kecamatanList" style="z-index:1000;position:absolute;width:100%;"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pengaturan e-Payment Telemedicine Duitku</h3>
+                </div>
+            	  <div class="panel-body">
+                    <div class="form-group">
+                        <label>Cara Bayar Telemedicine</label>
+                        <select name="api[duitku_kdpj]" class="form-control">
+                                                      <option value="-">-</option>
+                                                      <option value="BPJ">BPJS Kesehatan</option>
+                                                      <option value="UMU">Umum</option>
+                                                  </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Merchant Code</label>
+                        <input type="text" name="api[duitku_merchantCode]" class="form-control" value=""/>
+                        <p>Ada di dashboard Duitku.COM</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Merchant Key</label>
+                        <input type="text" name="api[duitku_merchantKey]" class="form-control" value=""/>
+                        <p>Ada di dashboard Duitku.COM</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Biaya Konsultasi Telemedicine</label>
+                        <input type="text" name="api[duitku_paymentAmount]" class="form-control" value=""/>
+                        <p>Biaya Konsultasi Online (Duitku Payment Amount)</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <input type="text" name="api[duitku_paymentMethod]" class="form-control" value="">
+                        <p>A1 = ATM Bersama, WW = duitku wallet, VC = Credit Card, MY = Mandiri Clickpay, BK = BCA KlikPay</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Layanan Telemedicine</label>
+                        <input type="text" name="api[duitku_productDetails]" class="form-control" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Expired Period</label>
+                        <input type="text" name="api[duitku_expiryPeriod]" class="form-control" value="">
+                        <p>Batas kadaluarsa pembayaran Virtual Account</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+          <input type="submit" name="save" class="btn btn-primary" value="Simpan" />
+        </div>
+    </form>
+</article>
+<script>
+  $('#kd_prop').keyup(function(){
+     event.preventDefault();
+     var query = $(this).val();
+     if(query != '')
+     {
+        $.ajax({
+           url: "http://localhost/rumah-sakit/admin/pasien/wilayah?show=caripropinsi&t=55c8d0157b3d",
+           method:"POST",
+           data:{query:query},
+           success:function(data)
+           {
+              $('#propinsiList').fadeIn();
+              $('#propinsiList').html(data);
+           }
+        });
+     }
+  });
+  $('#propinsiList').on('click', 'li', function(){
+     $('#nm_prop').val($(this).text().split(': ')[1]);
+     $('#kd_prop').val($(this).text().split(': ')[0]);
+     $('#propinsiList').fadeOut();
+  });
+  $('#kd_kab').keyup(function(){
+     event.preventDefault();
+     var query = $(this).val();
+     if(query != '')
+     {
+        $.ajax({
+           url: "http://localhost/rumah-sakit/admin/pasien/wilayah?show=carikabupaten&t=55c8d0157b3d",
+           method:"POST",
+           data:{query:query},
+           success:function(data)
+           {
+              $('#kabupatenList').fadeIn();
+              $('#kabupatenList').html(data);
+           }
+        });
+     }
+  });
+  $('#kabupatenList').on('click', 'li', function(){
+       $('#nm_kab').val($(this).text().split(': ')[1]);
+       $('#kd_kab').val($(this).text().split(': ')[0]);
+       $('#kabupatenList').fadeOut();
+  });
+  $('#kd_kec').keyup(function(){
+       event.preventDefault();
+       var query = $(this).val();
+       if(query != '')
+       {
+            $.ajax({
+                 url: "http://localhost/rumah-sakit/admin/pasien/wilayah?show=carikecamatan&t=55c8d0157b3d",
+                 method:"POST",
+                 data:{query:query},
+                 success:function(data)
+                 {
+                      $('#kecamatanList').fadeIn();
+                      $('#kecamatanList').html(data);
+                 }
+            });
+       }
+  });
+  $('#kecamatanList').on('click', 'li', function(){
+       $('#nm_kec').val($(this).text().split(': ')[1]);
+       $('#kd_kec').val($(this).text().split(': ')[0]);
+       $('#kecamatanList').fadeOut();
+  });
+
+ </script>
