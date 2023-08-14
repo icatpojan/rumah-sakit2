@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'VClaim Request',
-    'description'   =>  'Modul vclaim api untuk mLITE',
+    'description'   =>  'Modul vclaim api untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.1',
     'compatibility' =>  '2023',

@@ -1648,8 +1648,8 @@ CREATE TABLE IF NOT EXISTS `mlite_settings` (
 --
 
 INSERT INTO `mlite_settings` (`id`, `module`, `field`, `value`) VALUES
-(1, 'settings', 'logo', 'uploads/settings/logo.png'),
-(2, 'settings', 'nama_instansi', 'mLITE Indonesia'),
+(1, 'settings', 'logo', 'assets/dist/img/logo12.png'),
+(2, 'settings', 'nama_instansi', 'Pintar Sehat Indonesia'),
 (3, 'settings', 'alamat', 'Jl. Perintis Kemerdekaan 45'),
 (4, 'settings', 'kota', 'Barabai'),
 (5, 'settings', 'propinsi', 'Kalimantan Selatan'),

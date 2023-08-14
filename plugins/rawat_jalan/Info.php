@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Rawat Jalan',
-    'description'   =>  'Modul pendaftaran layanan untuk mLITE',
+    'description'   =>  'Modul pendaftaran layanan untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

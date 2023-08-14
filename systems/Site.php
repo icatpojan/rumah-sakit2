@@ -38,7 +38,7 @@ class Site extends Main
           $assign['username'] = !empty($username) ? $username : $this->getUserInfo('username');
         }
         $assign['notify']   = $this->getNotify();
-        $assign['powered']  = 'Powered by <a href="https://mlite.id/">mLITE</a>';
+        $assign['powered']  = 'Powered by <a href="https://mlite.id/">Pintar Sehat</a>';
         $assign['path']     = url();
         $assign['nama_instansi']    = $this->settings->get('settings.nama_instansi');
         $assign['alamat']    = $this->settings->get('settings.alamat');

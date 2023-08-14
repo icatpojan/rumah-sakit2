@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Bridging PCare',
-    'description'   =>  'Modul pcare api untuk mLITE',
+    'description'   =>  'Modul pcare api untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

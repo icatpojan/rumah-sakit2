@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'JKN Mobile',
-    'description'   =>  'Modul mLITE JKN Mobile API',
+    'description'   =>  'Modul Pintar Sehat JKN Mobile API',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

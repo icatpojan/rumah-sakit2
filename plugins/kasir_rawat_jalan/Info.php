@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Kasir Rawat Jalan',
-    'description'   =>  'Modul kasir rawat jalan untuk mLITE',
+    'description'   =>  'Modul kasir rawat jalan untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

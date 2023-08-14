@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'WA Gateway',
-    'description'   =>  'Modul Whatsapp Gateway mLITE',
+    'description'   =>  'Modul Whatsapp Gateway Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

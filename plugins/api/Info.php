@@ -1,12 +1,12 @@
 <?php
 return [
     'name'          =>  'API',
-    'description'   =>  'Katalog API mLITE',
+    'description'   =>  'Katalog API Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',
     'icon'          =>  'database',
-    'pages'         =>  ['API mLITE' => 'api'],
+    'pages'         =>  ['API Pintar Sehat' => 'api'],
     'install'       =>  function () use ($core) {
 
       $core->mysql()->pdo()->exec("CREATE TABLE IF NOT EXISTS `mlite_pengaduan` (

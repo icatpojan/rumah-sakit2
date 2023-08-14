@@ -37,7 +37,7 @@ class Admin extends AdminModule
     public function getManage()
     {
       $sub_modules = [
-        ['name' => 'Pengaturan Umum', 'url' => url([ADMIN, 'settings', 'general']), 'icon' => 'wrench', 'desc' => 'Pengaturan umum mLITE'],
+        ['name' => 'Pengaturan Umum', 'url' => url([ADMIN, 'settings', 'general']), 'icon' => 'wrench', 'desc' => 'Pengaturan umum Pintar Sehat'],
         ['name' => 'Tema Publik', 'url' => url([ADMIN, 'settings', 'theme']), 'icon' => 'cubes', 'desc' => 'Pengaturan tema tampilan publik'],
         ['name' => 'Pembaruan Sistem', 'url' => url([ADMIN, 'settings', 'updates']), 'icon' => 'cubes', 'desc' => 'Pembaruan sistem'],
       ];
@@ -268,7 +268,7 @@ class Admin extends AdminModule
             }
         } elseif (isset($_POST['update'])) {
             if (!class_exists("ZipArchive")) {
-                $this->tpl->set('error', "ZipArchive is required to update mLITE.");
+                $this->tpl->set('error', "ZipArchive is required to update Pintar Sehat.");
             }
 
             if (!isset($_GET['manual'])) {

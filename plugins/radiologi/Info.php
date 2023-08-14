@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Radiologi',
-    'description'   =>  'Modul Radiologi untuk mLITE',
+    'description'   =>  'Modul Radiologi untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

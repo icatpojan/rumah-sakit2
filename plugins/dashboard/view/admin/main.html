@@ -22,7 +22,12 @@
     bottom: 120px;
     left: 80px;
     width: 100%;
-    color: {$settings.text_color} !important;
+
+    color: {
+      $settings.text_color
+    }
+
+     !important;
   }
 
   p.title {
@@ -181,43 +186,52 @@
 
 <div class="dashboard_wall">
   <img src="{?=url()?}/{$settings.logo}" class="logo" width="120px" alt="">
-  <p class="title">{$settings.nama_instansi}</p>
-  <p class="alamat">{$settings.alamat} - {$settings.kota} - {$settings.propinsi}</p>
+  <!-- <p class="title">{$settings.nama_instansi}</p>
+  <p class="alamat">{$settings.alamat} - {$settings.kota} - {$settings.propinsi}</p> -->
 </div>
 {if: $presensi}
-<div class="btn-group">
-  <a href="javascript:void(0)" onclick="getDistanceFromLatLonInKm()" class="btn btn-danger btn-fab">
+<!-- <div class="btn-group">
+  <a href="javascript:void(0)" onclick="getDistanceFromLatLonInKm()" class="btn btn-danger btn-fab"
+    style="border-radius: 30px;">
     <i class="fa fa-camera"></i> Presensi Online
   </a>
+</div> -->
+{if: $notif_presensi == 'true'}
+{if: $cek_presensi}
+<div class="alert alert-success coba"
+  style="border-radius:10px;margin-top:100px;max-width:700px;margin-left:500px;padding:30px;" role="alert">
+  <div class="halo">
+    <h4 style="color: black;"><b>Halo {$nama}</b></h4>
+    <!-- <br><i>* {$teks} *</i> -->
+  </div>
+  <i class="fa fa-thumbs-up"></i> Anda Sudah Absen Masuk<br>
 </div>
-  {if: $notif_presensi == 'true'}
-    {if: $cek_presensi}
-    <div class="alert alert-success coba" role="alert">
-      <div class="halo">
-        <b>Halo {$nama}</b>
-      </div>
-      <i class="fa fa-thumbs-up"></i> Anda Sudah Presensi Masuk
-      <br>
-      <i>* {$teks} *</i>
-    </div>
-    {elseif: $cek_rekap}
-    <div class="alert alert-info coba" role="alert">
-      <div class="halo">
-        <b>Halo {$nama}</b>
-      </div>
-      <i class="fa fa-check-square"></i> Anda Sudah Presensi Pulang<br>
-      <i>* {$teks} *</i>
-    </div>
-    {else}
-    <div class="alert alert-warning coba" role="alert">
-      <div class="halo">
-        <b>Halo {$nama}</b>
-      </div>
-      <i class="fa fa-exclamation-triangle"></i> Anda Belum Presensi<br>
-      <i>* {$teks} *</i>
-    </div>
-    {/if}
-  {/if}
+{elseif: $cek_rekap}
+<div class="alert alert-info coba"
+  style="border-radius:10px;margin-top:100px;max-width:700px;margin-left:500px;padding:30px;" role="alert">
+  <div class="halo">
+    <h4 style="color: black;"><b>Halo {$nama}</b></h4>
+    <!-- <br><i>* {$teks} *</i> -->
+  </div>
+  <i class="fa fa-check-square"></i> Anda Sudah Absen Pulang<br>
+</div>
+{else}
+<div class="alert alert-warning coba"
+  style="border-radius:10px;margin-top:100px;max-width:700px;margin-left:500px;padding:30px;" role="alert">
+  <div class="halo">
+    <h4 style="color: black;"><b>Halo {$nama}</b></h4>
+    <!-- <br><i>* {$teks} *</i> -->
+  </div>
+  <i class="fa fa-exclamation-triangle"></i> Anda Belum Absen<br>
+  <!-- <div class="btn-group"> -->
+  <a href="javascript:void(0)" onclick="getDistanceFromLatLonInKm()" class="btn btn-danger btn-fab"
+    style="border-radius: 10px;margin-left:500px;background:#000080;border:none">
+    <i class="fa fa-camera"></i> Presensi Online
+  </a>
+  <!-- </div> -->
+</div>
+{/if}
+{/if}
 {/if}
 <!-- The Modal -->
 <div class="modal" id="myModal" data-keyboard="false" data-backdrop="static">

@@ -1456,7 +1456,7 @@ class Admin extends AdminModule
 
     $this->tpl->set('billing', $rows);
 
-    /* Menggunakan billing bawaan mLITE */
+    /* Menggunakan billing bawaan Pintar Sehat */
 
     if($this->settings->get('vedika.billing') == 'mlite') {
         $settings = $this->settings('settings');

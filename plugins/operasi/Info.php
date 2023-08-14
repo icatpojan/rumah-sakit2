@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Operasi',
-    'description'   =>  'Modul operasi dan VK di mLITE',
+    'description'   =>  'Modul operasi dan VK di Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

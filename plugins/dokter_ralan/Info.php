@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Dokter Ralan',
-    'description'   =>  'Modul dokter rawat jalan untuk mLITE',
+    'description'   =>  'Modul dokter rawat jalan untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

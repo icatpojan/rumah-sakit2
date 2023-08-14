@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Keuangan',
-    'description'   =>  'Modul Keuangan untuk mLITE',
+    'description'   =>  'Modul Keuangan untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',

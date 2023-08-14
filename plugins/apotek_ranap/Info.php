@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Apotek Ranap',
-    'description'   =>  'Modul apotek rawat inap untuk mLITE',
+    'description'   =>  'Modul apotek rawat inap untuk Pintar Sehat',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',
