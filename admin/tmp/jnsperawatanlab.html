@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><button id="backButton"><i class="fas fa-angle-left"></i></button> Kelola Jenis
+          Perawatan Laboratorium</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div id="notif"></div>
+        </div>
+        <div class="row">
+          <div class="col col-md-6">
+            <div class="searchbox-input form-inline padding-bottom-lg" style="margin-top:5px;margin-bottom:15px;">
+              <div class="input-group" id="index">
+                <input class="btn btn-default" type="button" id="bukaform" value="Buka Form" />
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-6">
+            <div class="searchbox-input form-inline pull-right padding-bottom-lg"
+              style="margin-top:5px;margin-bottom:15px;">
+              <div class="input-group">
+                <input type="text" name="cari" minlength="3" class="form-control" placeholder="Pencarian..." required>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><span
+                      class="glyphicon glyphicon-search"></span></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="form"></div>
+        <div id="display_template"></div>
+        <div class="display">
+          <div id="display">
+  <div class="table-responsive no-margin">
+    <table class="table table-striped no-padding">
+      <thead>
+        <tr>
+          <th>Kode Perawatan</th>
+          <th>Nama Perawatan</th>
+          <th>Cara Bayar</th>
+          <th>Template</th>
+        </tr>
+      </thead>
+      <tbody>
+                        <tr>
+          <td class="edit" data-kd_jenis_prw="LAB001">LAB001</td>
+          <td class="edit" data-kd_jenis_prw="LAB001">Pemeriksaan Darah</td>
+          <td class="edit" data-kd_jenis_prw="LAB001">-</td>
+          <td class="template_laboratorium" data-kd_jenis_prw="LAB001"><button type="button" class="btn btn-xs btn-success">Manage</button></td>
+        </tr>
+                      </tbody>
+    </table>
+  </div>
+  <nav class="clearfix m-t-xs">
+    <div class="col">
+      <ul class="pagination no-margin pull-right">
+                      <li class="disabled"><a href="#">&laquo;</a></li>
+                        <li class="disabled"><a href="#">&larr;</a></li>
+                <li class="disabled"><a href="#">Hal : 1 dari 1 Hal</a></li>
+                <li class="disabled"><a href="#">&rarr;</a></li>
+                        <li class="disabled"><a href="#">&raquo;</a></li>
+                    </ul>
+    </div>
+  </nav>
+</div>
+<script type="text/javascript">
+  $(".alert-dismissible").fadeTo(3000, 500).slideUp(500);
+</script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(".alert-dismissible").fadeTo(3000, 500).slideUp(500);
+</script>

@@ -504,7 +504,7 @@ $("#soap").on("click",".hapus_soap", function(event){
         $('input:text[name=spo2]').val("");
         $('input:text[name=tgl_perawatan]').val("2023-08-15");
         $('input:text[name=tgl_registrasi]').val("2023-08-15");
-        $('input:text[name=jam_rawat]').val("11:27:17");
+        $('input:text[name=jam_rawat]').val("18:58:14");
         $('#notif').html("<div class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\" style=\"border-radius:0px;margin-top:-15px;\">"+
         "Data rincian riwayat telah dihapus!"+
         "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">&times;</button>"+
@@ -608,7 +608,7 @@ $("#kontrol").on("click",".hapus_kontrol", function(event){
         $('textarea[name=instruksi]').val("");
         $('input:text[name=tgl_perawatan]').val("2023-08-15");
         $('input:text[name=tgl_registrasi]').val("2023-08-15");
-        $('input:text[name=jam_rawat]').val("11:27:17");
+        $('input:text[name=jam_rawat]').val("18:58:14");
         */
         $('#notif').html("<div class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\" style=\"border-radius:0px;margin-top:-15px;\">"+
         "Data rincian riwayat telah dihapus!"+

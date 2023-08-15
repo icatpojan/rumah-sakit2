@@ -1,0 +1,124 @@
+<div id="form">
+  <div class="row col-md-5 m-r-md">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Kode</label>
+            <div class="col-sm-9">
+              <input type="text" id="kd_jenis_prw" name="kd_jenis_prw" class="form-control" value="LAB001" disabled>
+              <input name="kd_jenis_prw_baru" class="form-control" type="hidden" value="" id="kd_jenis_prw_baru" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Nama</label>
+            <div class="col-sm-9">
+              <input type="text" name="nm_perawatan" class="form-control" value="Pemeriksaan Darah">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Bagian RS</label>
+            <div class="col-sm-9">
+              <input type="text" name="bagian_rs" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">BHP</label>
+            <div class="col-sm-9">
+              <input type="text" name="bhp" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Tarif Perujuk</label>
+            <div class="col-sm-9">
+              <input type="text" name="tarif_perujuk" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Tarif Dokter</label>
+            <div class="col-sm-9">
+              <input type="text" name="tarif_tindakan_dokter" class="form-control" value="100000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Tarif Petugas</label>
+            <div class="col-sm-9">
+              <input type="text" name="tarif_tindakan_petugas" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">KSO</label>
+            <div class="col-sm-9">
+              <input type="text" name="kso" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Manajemen</label>
+            <div class="col-sm-9">
+              <input type="text" name="menejemen" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Total Bayar</label>
+            <div class="col-sm-9">
+              <input type="text" name="total_byr" class="form-control" value="100000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Penjab</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="kd_pj">
+                                <option value="-" selected>-</option>
+                                <option value="BPJ">BPJS Kesehatan</option>
+                                <option value="UMU">Umum</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Kelas</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="kelas">
+                                  <option value="Kelas 1" selected>Kelas 1</option>
+                                  <option value="Kelas 2">Kelas 2</option>
+                                  <option value="Kelas 3">Kelas 3</option>
+                                  <option value="Kelas Utama">Kelas Utama</option>
+                                  <option value="Kelas VIP">Kelas VIP</option>
+                                  <option value="Kelas VVIP">Kelas VVIP</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Kategori</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="kategori">
+                                  <option value="PA">PA</option>
+                                  <option value="PK" selected>PK</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Status</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="status">
+                <option value="1" selected>Aktif</option>
+                <option value="0">Tidak Aktif</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-b-xl clearfix">
+      <button type="button" name="button" class="btn btn-primary" id="simpan"><i class="fa fa-save"></i><span class="hidden-xs"> Simpan</span></button>
+      <button type="button" name="button" class="btn btn-danger" id="hapus"><i class="fa fa-trash"></i><span class="hidden-xs"> Hapus</span></button>
+      <button type="button" name="button" class="btn btn-warning" id="batal"><i class="fa fa-close"></i><span class="hidden-xs"> Batal</span></button>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('select').selectator();
+  $('input:text[name=bhp], input:text[name=bagian_rs], input:text[name=tarif_perujuk], input:text[name=tarif_tindakan_dokter], input:text[name=tarif_tindakan_petugas], input:text[name=kso], input:text[name=menejemen]').keyup(function(){
+      var total_byr = parseInt($('input:text[name=bhp]').val()) + parseInt($('input:text[name=bagian_rs]').val()) + parseInt($('input:text[name=tarif_perujuk]').val()) + parseInt($('input:text[name=tarif_tindakan_dokter]').val()) + parseInt($('input:text[name=tarif_tindakan_petugas]').val()) + parseInt($('input:text[name=kso]').val()) + parseInt($('input:text[name=menejemen]').val());
+      $('input:text[name=total_byr]').val(total_byr);
+  });
+</script>

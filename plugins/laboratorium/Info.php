@@ -2,7 +2,7 @@
 
 return [
     'name'          =>  'Laboratorium',
-    'description'   =>  'Modul Laboratorium untuk Pintar Sehat',
+    'description'   =>  'Modul Laboratorium untuk mLITE',
     'author'        =>  'Basoro',
     'version'       =>  '1.0',
     'compatibility' =>  '2023',
