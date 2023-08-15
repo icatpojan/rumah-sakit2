@@ -1,16 +1,16 @@
-$("#notif").hide();
+$("#notif").hide(500);
 // tombol tambah diklik
 $("#index").on('click', '#bukaform', function(){
   var baseURL = mlite.url + '/' + mlite.admin;
   event.preventDefault();
-  $("#form").show().load(baseURL + '/master/bangsalform?t=' + mlite.token);
+  $("#form").show(500).load(baseURL + '/master/bangsalform?t=' + mlite.token);
   $("#bukaform").val("Tutup Form");
   $("#bukaform").attr("id", "tutupform");
 });
 
 $("#index").on('click', '#tutupform', function(){
   event.preventDefault();
-  $("#form").hide();
+  $("#form").hide(500);
   $("#tutupform").val("Buka Form");
   $("#tutupform").attr("id", "bukaform");
 });
@@ -35,14 +35,14 @@ $("#form").on("click", "#simpan", function(event){
     nm_bangsal: nm_bangsal,
     status: status
   } ,function(data) {
-      $("#display").show().load(baseURL + '/master/bangsaldisplay?t=' + mlite.token);
-      $("#form").hide();
+      $("#display").show(500).load(baseURL + '/master/bangsaldisplay?t=' + mlite.token);
+      $("#form").hide(500);
       $("#tutupform").val("Buka Form");
       $("#tutupform").attr("id", "bukaform");
       $('#notif').html("<div class=\"alert alert-success alert-dismissible fade in\" role=\"alert\" style=\"border-radius:0px;margin-top:-15px;\">"+
       "Data bangsal telah disimpan!"+
       "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">&times;</button>"+
-      "</div>").show();
+      "</div>").show(500);
   });
 });
 
@@ -55,7 +55,7 @@ $("#display").on("click", ".edit", function(event){
 
   $.post(url, {kd_bangsal: kd_bangsal} ,function(data) {
     // tampilkan data
-    $("#form").html(data).show();
+    $("#form").html(data).show(500);
     $("#bukaform").val("Tutup Form");
     $("#bukaform").attr("id", "tutupform");
   });
@@ -77,14 +77,14 @@ $("#form").on("click","#hapus", function(event){
         kd_bangsal: kd_bangsal
       } ,function(data) {
         // sembunyikan form, tampilkan data yang sudah di perbaharui, tampilkan notif
-        $("#form").hide();
+        $("#form").hide(500);
         $("#tutupform").val("Buka Form");
         $("#tutupform").attr("id", "bukaform");
         $("#display").load(baseURL + '/master/bangsaldisplay?t=' + mlite.token);
         $('#notif').html("<div class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\" style=\"border-radius:0px;margin-top:-15px;\">"+
         "Data bangsal telah dihapus!"+
         "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">&times;</button>"+
-        "</div>").show();
+        "</div>").show(500);
       });
     }
   });
@@ -99,7 +99,7 @@ $('input:text[name=cari]').on('input',function(e){
   if(cari!="") {
       $.post(url, {cari: cari} ,function(data) {
       // tampilkan data yang sudah di perbaharui
-        $("#display").html(data).show();
+        $("#display").html(data).show(500);
       });
   } else {
       $("#display").load(baseURL + '/master/bangsaldisplay?t=' + mlite.token);
@@ -117,7 +117,7 @@ $("#display").on("click", ".halaman",function(event){
 
   $.post(url, {halaman: kd_hal} ,function(data) {
   // tampilkan data
-    $("#display").html(data).show();
+    $("#display").html(data).show(500);
   });
 
 });

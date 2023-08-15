@@ -5,11 +5,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pintar Sehat - Dashboard</title>
+  <title>Pintar Sehat - Pendaftaran Pasien</title>
   <link rel="icon" href="http://localhost/rumah-sakit/uploads/settings/logo12.png" type="image/x-icon">
   <link href="http://localhost/rumah-sakit/assets/css/ataaka.min.css" rel="stylesheet">
   <link href="http://localhost/rumah-sakit/assets/css/animate.min.css" rel="stylesheet">
-  <link href="http://localhost/rumah-sakit/themes/admin/css/style.css?v=2023-01-01 00:00:01&t=e9aaf94ba71f" rel="stylesheet">
+  <link href="http://localhost/rumah-sakit/themes/admin/css/style.css?v=2023-01-01 00:00:01&t=469e58149f0b" rel="stylesheet">
   <link href="http://localhost/rumah-sakit/assets/css/font-awesome.css" rel="stylesheet">
 
   <!-- PWA Support -->
@@ -41,17 +41,16 @@
   <script src="http://localhost/rumah-sakit/assets/jscripts/bootbox.min.js?v=2023-01-01 00:00:01"></script>
   <script src="http://localhost/rumah-sakit/assets/jscripts/html.sortable.min.js?v=2023-01-01 00:00:01"></script>
   <script src="http://localhost/rumah-sakit/assets/jscripts/tinynav.min.js?v=2023-01-01 00:00:01"></script>
-  <script src="http://localhost/rumah-sakit/themes/admin/js/kalypto.min.js?v=2023-01-01 00:00:01&t=e9aaf94ba71f"></script>
-  <script src="http://localhost/rumah-sakit/themes/admin/js/selectator.js?v=2023-01-01 00:00:01&t=e9aaf94ba71f"></script>
+  <script src="http://localhost/rumah-sakit/themes/admin/js/kalypto.min.js?v=2023-01-01 00:00:01&t=469e58149f0b"></script>
+  <script src="http://localhost/rumah-sakit/themes/admin/js/selectator.js?v=2023-01-01 00:00:01&t=469e58149f0b"></script>
   <script>
     var mlite = {
-      token: "e9aaf94ba71f",
+      token: "469e58149f0b",
       url: "http://localhost/rumah-sakit",
       admin: "admin"
     };
   </script>
   <meta name="generator" content="Medic LITE Indonesia" />
-<script src="http://localhost/rumah-sakit/plugins/dashboard/js/admin/webcam.js?v=2023-01-01 00:00:01&t=e9aaf94ba71f"></script>
   <style>
     /* Gaya dasar body */
     body {
@@ -175,6 +174,19 @@
     .menolak-terang:hover {
       background: #000080 !important;
     }
+
+    .scroll-navbar {
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .panel {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      border-radius: 10px;
+    }
   </style>
 </head>
 
@@ -192,26 +204,26 @@
             </a>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://localhost/rumah-sakit/admin/logout?t=e9aaf94ba71f" class="fa fa-power-off" data-toggle="tooltip"
+            <li><a href="http://localhost/rumah-sakit/admin/logout?t=469e58149f0b" class="fa fa-power-off" data-toggle="tooltip"
                 data-placement="bottom" title="Keluar"></a></li>
           </ul>
         </div>
       </nav>
     </div>
     <nav class="navbar navbar-inverse navbar-fixed-top visible-lg visible-md" style="margin-bottom:0;font-size:16px;background: transparent;position:fixed;margin-left:
-      250px;border-bottom:none;">
+      250px;border-bottom:none;" id="navbar">
       <div class="container-fluid">
         <!-- <ul class="nav navbar-nav">
           <li><a href="#" data-toggle="modal" data-target="#menuModal"><img class="img-responsive"
                 src="http://localhost/rumah-sakit/assets/img/icon-home.png"
                 style="display:inline-block;height:24px;margin-top:-2px;margin-right:5px;" alt=""> Menu</a></li>
-                    <li><a href="http://localhost/rumah-sakit/admin/pasien/manage?t=e9aaf94ba71f" > <img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-pasien.png" alt="">
+                    <li><a href="http://localhost/rumah-sakit/admin/pasien/manage?t=469e58149f0b" > <img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-pasien.png" alt="">
               Pasien</a></li>
-                                        <li><a href="http://localhost/rumah-sakit/admin/igd/manage?t=e9aaf94ba71f" > <img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-igd.png" alt="">
+                                        <li><a href="http://localhost/rumah-sakit/admin/igd/manage?t=469e58149f0b" > <img class="menu_icon" src="http://localhost/rumah-sakit/assets/img/icon-igd.png" alt="">
               IGD</a></li>
-                              <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=e9aaf94ba71f" > <img class="menu_icon"
+                              <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=469e58149f0b" > <img class="menu_icon"
               src="http://localhost/rumah-sakit/assets/img/icon-ralan.png" alt=""> Rawat Jalan</a></li>
-                              <li><a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=e9aaf94ba71f" > <img class="menu_icon"
+                              <li><a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=469e58149f0b" > <img class="menu_icon"
               src="http://localhost/rumah-sakit/assets/img/icon-ranap.png" alt=""> Rawat Inap</a></li>
                                         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="menu_icon"
@@ -243,248 +255,248 @@
             <ul class="dropdown-menu">
               <li><a href="#" data-toggle="modal" data-target="#tentangModal"> Tentang</a></li>
               <li><a href="#" data-toggle="modal" data-target="#bantuanModal"> Bantuan</a></li>
-              <li><a href="http://localhost/rumah-sakit/admin/logout?t=e9aaf94ba71f"> Logout</a></li>
+              <li><a href="http://localhost/rumah-sakit/admin/logout?t=469e58149f0b"> Logout</a></li>
               <li role="separator" class="divider"></li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/dashboard/main?t=e9aaf94ba71f">Dashboard</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/dashboard/main?t=469e58149f0b">Dashboard</a>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/master/manage?t=e9aaf94ba71f">Master Data</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/master/manage?t=469e58149f0b">Master Data</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/manage?t=e9aaf94ba71f">Manage</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/dokter?t=e9aaf94ba71f">Dokter</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/petugas?t=e9aaf94ba71f">Petugas</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/poliklinik?t=e9aaf94ba71f">Poliklinik</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/bangsal?t=e9aaf94ba71f">Bangsal</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/kamar?t=e9aaf94ba71f">Kamar</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/databarang?t=e9aaf94ba71f">Data Barang</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawatan?t=e9aaf94ba71f">Perawatan Ralan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawataninap?t=e9aaf94ba71f">Perawatan Ranap</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawatanlab?t=e9aaf94ba71f">Perawatan Laboratorium</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawatanradiologi?t=e9aaf94ba71f">Perawatan Radiologi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/bahasa?t=e9aaf94ba71f">Bahasa</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/cacat?t=e9aaf94ba71f">Cacat Fisik</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/suku?t=e9aaf94ba71f">Suku Bangsa</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/perusahaan?t=e9aaf94ba71f">Perusahaan Pasien</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/penjab?t=e9aaf94ba71f">Penanggung Jawab</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/golonganbarang?t=e9aaf94ba71f">Golongan Barang</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/industrifarmasi?t=e9aaf94ba71f">Industri Farmasi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/jenis?t=e9aaf94ba71f">Jenis Barang</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/kategoribarang?t=e9aaf94ba71f">Kategori Barang</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/kategoripenyakit?t=e9aaf94ba71f">Kategori Penyakit</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/kategoriperawatan?t=e9aaf94ba71f">Kategori Perawatan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/kodesatuan?t=e9aaf94ba71f">Kode Satuan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/masteraturanpakai?t=e9aaf94ba71f">Master Aturan Pakai</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/masterberkasdigital?t=e9aaf94ba71f">Master Berkas Digital</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/spesialis?t=e9aaf94ba71f">Spesialis</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/bank?t=e9aaf94ba71f">Bank</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/bidang?t=e9aaf94ba71f">Bidang</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/departemen?t=e9aaf94ba71f">Departemen</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/emergencyindex?t=e9aaf94ba71f">Emergency Index</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/jabatan?t=e9aaf94ba71f">Jabatan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/jenjangjabatan?t=e9aaf94ba71f">Jenjang Jabatan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/kelompokjabatan?t=e9aaf94ba71f">Kelompok Jabatan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/pendidikan?t=e9aaf94ba71f">Pendidikan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/resikokerja?t=e9aaf94ba71f">Resiko Kerja</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/statuskerja?t=e9aaf94ba71f">Status Kerja</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/statuswp?t=e9aaf94ba71f">Status WP</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/master/metoderacik?t=e9aaf94ba71f">Metode Racik</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/manage?t=469e58149f0b">Manage</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/dokter?t=469e58149f0b">Dokter</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/petugas?t=469e58149f0b">Petugas</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/poliklinik?t=469e58149f0b">Poliklinik</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/bangsal?t=469e58149f0b">Bangsal</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/kamar?t=469e58149f0b">Kamar</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/databarang?t=469e58149f0b">Data Barang</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawatan?t=469e58149f0b">Perawatan Ralan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawataninap?t=469e58149f0b">Perawatan Ranap</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawatanlab?t=469e58149f0b">Perawatan Laboratorium</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/jnsperawatanradiologi?t=469e58149f0b">Perawatan Radiologi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/bahasa?t=469e58149f0b">Bahasa</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/cacat?t=469e58149f0b">Cacat Fisik</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/suku?t=469e58149f0b">Suku Bangsa</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/perusahaan?t=469e58149f0b">Perusahaan Pasien</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/penjab?t=469e58149f0b">Penanggung Jawab</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/golonganbarang?t=469e58149f0b">Golongan Barang</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/industrifarmasi?t=469e58149f0b">Industri Farmasi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/jenis?t=469e58149f0b">Jenis Barang</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/kategoribarang?t=469e58149f0b">Kategori Barang</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/kategoripenyakit?t=469e58149f0b">Kategori Penyakit</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/kategoriperawatan?t=469e58149f0b">Kategori Perawatan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/kodesatuan?t=469e58149f0b">Kode Satuan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/masteraturanpakai?t=469e58149f0b">Master Aturan Pakai</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/masterberkasdigital?t=469e58149f0b">Master Berkas Digital</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/spesialis?t=469e58149f0b">Spesialis</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/bank?t=469e58149f0b">Bank</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/bidang?t=469e58149f0b">Bidang</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/departemen?t=469e58149f0b">Departemen</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/emergencyindex?t=469e58149f0b">Emergency Index</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/jabatan?t=469e58149f0b">Jabatan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/jenjangjabatan?t=469e58149f0b">Jenjang Jabatan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/kelompokjabatan?t=469e58149f0b">Kelompok Jabatan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/pendidikan?t=469e58149f0b">Pendidikan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/resikokerja?t=469e58149f0b">Resiko Kerja</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/statuskerja?t=469e58149f0b">Status Kerja</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/statuswp?t=469e58149f0b">Status WP</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/master/metoderacik?t=469e58149f0b">Metode Racik</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=e9aaf94ba71f">WA Gateway</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=469e58149f0b">WA Gateway</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=e9aaf94ba71f">Manage</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/sendmessage?t=e9aaf94ba71f">Send Message</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/sendimage?t=e9aaf94ba71f">Send Image</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/sendfile?t=e9aaf94ba71f">Send File</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/settings?t=e9aaf94ba71f">Settings</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=469e58149f0b">Manage</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/sendmessage?t=469e58149f0b">Send Message</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/sendimage?t=469e58149f0b">Send Image</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/sendfile?t=469e58149f0b">Send File</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/wagateway/settings?t=469e58149f0b">Settings</a></li>
                                   </ul>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/apotek_ralan/manage?t=e9aaf94ba71f">Apotek Ralan</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/apotek_ralan/manage?t=469e58149f0b">Apotek Ralan</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/dokter_ralan/manage?t=e9aaf94ba71f">Dokter Ralan</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/dokter_ralan/manage?t=469e58149f0b">Dokter Ralan</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/igd/manage?t=e9aaf94ba71f">IGD</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/igd/manage?t=469e58149f0b">IGD</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/dokter_igd/manage?t=e9aaf94ba71f">Dokter IGD</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/dokter_igd/manage?t=469e58149f0b">Dokter IGD</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/laboratorium/manage?t=e9aaf94ba71f">Laboratorium</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/laboratorium/manage?t=469e58149f0b">Laboratorium</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/radiologi/manage?t=e9aaf94ba71f">Radiologi</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/radiologi/manage?t=469e58149f0b">Radiologi</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/icd/manage?t=e9aaf94ba71f">ICD 9 - 10 Request</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/icd/manage?t=469e58149f0b">ICD 9 - 10 Request</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=e9aaf94ba71f">Rawat Inap</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=469e58149f0b">Rawat Inap</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/apotek_ranap/manage?t=e9aaf94ba71f">Apotek Ranap</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/apotek_ranap/manage?t=469e58149f0b">Apotek Ranap</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=e9aaf94ba71f">Pendaftaran Pasien</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=469e58149f0b">Pendaftaran Pasien</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/dokter_ranap/manage?t=e9aaf94ba71f">Dokter Ranap</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/dokter_ranap/manage?t=469e58149f0b">Dokter Ranap</a>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/kasir_rawat_inap/manage?t=e9aaf94ba71f">Kasir Rawat Inap</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/kasir_rawat_inap/manage?t=469e58149f0b">Kasir Rawat Inap</a>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/operasi/manage?t=e9aaf94ba71f">Operasi</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/operasi/manage?t=469e58149f0b">Operasi</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/manage?t=e9aaf94ba71f">Manage</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/pasienoperasi?t=e9aaf94ba71f">Pasien Operasi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/bookingoperasi?t=e9aaf94ba71f">Booking Operasi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/paketoperasi?t=e9aaf94ba71f">Paket Operasi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/obatoperasi?t=e9aaf94ba71f">Obat Operasi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/laporanoperasi?t=e9aaf94ba71f">Laporan Operasi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/manage?t=469e58149f0b">Manage</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/pasienoperasi?t=469e58149f0b">Pasien Operasi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/bookingoperasi?t=469e58149f0b">Booking Operasi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/paketoperasi?t=469e58149f0b">Paket Operasi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/obatoperasi?t=469e58149f0b">Obat Operasi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/operasi/laporanoperasi?t=469e58149f0b">Laporan Operasi</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=e9aaf94ba71f">Anjungan</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=469e58149f0b">Anjungan</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/anjungan/index?t=e9aaf94ba71f">Display</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/anjungan/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/anjungan/index?t=469e58149f0b">Display</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/anjungan/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/api/manage?t=e9aaf94ba71f">API</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/api/manage?t=469e58149f0b">API</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/api/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/api/notifikasi?t=e9aaf94ba71f">Notifikasi APAM</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/api/settingsapam?t=e9aaf94ba71f">Pengaturan APAM</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/api/paymentduitku?t=e9aaf94ba71f">Payment Duitku</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/api/settingskey?t=e9aaf94ba71f">Pengaturan API Key</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/api/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/api/notifikasi?t=469e58149f0b">Notifikasi APAM</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/api/settingsapam?t=469e58149f0b">Pengaturan APAM</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/api/paymentduitku?t=469e58149f0b">Payment Duitku</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/api/settingskey?t=469e58149f0b">Pengaturan API Key</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=e9aaf94ba71f">JKN Mobile</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=469e58149f0b">JKN Mobile</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/index?t=e9aaf94ba71f">Katalog</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingpoli?t=e9aaf94ba71f">Mapping Poliklinik</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingpoli?t=e9aaf94ba71f">Add Mapping Poliklinik</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingdokter?t=e9aaf94ba71f">Mapping Dokter</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingdokter?t=e9aaf94ba71f">Add Mapping Dokter</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/jadwaldokter?t=e9aaf94ba71f">Jadwal Dokter HFIS</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/bookingantrol?t=e9aaf94ba71f">Data Booking Antrol</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/taskid?t=e9aaf94ba71f">Task ID</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/antrol?t=e9aaf94ba71f">Dashboard Antrol BPJS</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/index?t=469e58149f0b">Katalog</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingpoli?t=469e58149f0b">Mapping Poliklinik</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingpoli?t=469e58149f0b">Add Mapping Poliklinik</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingdokter?t=469e58149f0b">Mapping Dokter</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingdokter?t=469e58149f0b">Add Mapping Dokter</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/jadwaldokter?t=469e58149f0b">Jadwal Dokter HFIS</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/bookingantrol?t=469e58149f0b">Data Booking Antrol</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/taskid?t=469e58149f0b">Task ID</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/antrol?t=469e58149f0b">Dashboard Antrol BPJS</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/jkn_mobile/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=e9aaf94ba71f">VClaim Request</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=469e58149f0b">VClaim Request</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/referensi?t=e9aaf94ba71f">Referensi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/peserta?t=e9aaf94ba71f">Peserta</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/rencanakontrol?t=e9aaf94ba71f">Rencana Kontrol</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/sep?t=e9aaf94ba71f">SEP</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/rujukan?t=e9aaf94ba71f">Rujukan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/prb?t=e9aaf94ba71f">PRB</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/lpk?t=e9aaf94ba71f">Lembar Pengajuan Klaim</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/monitoring?t=e9aaf94ba71f">Monitoring</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/referensi?t=469e58149f0b">Referensi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/peserta?t=469e58149f0b">Peserta</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/rencanakontrol?t=469e58149f0b">Rencana Kontrol</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/sep?t=469e58149f0b">SEP</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/rujukan?t=469e58149f0b">Rujukan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/prb?t=469e58149f0b">PRB</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/lpk?t=469e58149f0b">Lembar Pengajuan Klaim</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vclaim/monitoring?t=469e58149f0b">Monitoring</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=e9aaf94ba71f">Keuangan</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=469e58149f0b">Keuangan</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/akunrekening?t=e9aaf94ba71f">Akun Rekening</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/rekeningtahun?t=e9aaf94ba71f">Rekening Tahun</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/pengaturanrekening?t=e9aaf94ba71f">Pengaturan Rekening</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/postingjurnal?t=e9aaf94ba71f">Posting Jurnal</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/jurnalharian?t=e9aaf94ba71f">Jurnal Harian</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/bukubesar?t=e9aaf94ba71f">Buku Besar</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/cashflow?t=e9aaf94ba71f">Cash Flow</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/neraca?t=e9aaf94ba71f">Neraca Keuangan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/akunrekening?t=469e58149f0b">Akun Rekening</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/rekeningtahun?t=469e58149f0b">Rekening Tahun</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/pengaturanrekening?t=469e58149f0b">Pengaturan Rekening</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/postingjurnal?t=469e58149f0b">Posting Jurnal</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/jurnalharian?t=469e58149f0b">Jurnal Harian</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/bukubesar?t=469e58149f0b">Buku Besar</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/cashflow?t=469e58149f0b">Cash Flow</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/neraca?t=469e58149f0b">Neraca Keuangan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/keuangan/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=e9aaf94ba71f">Manajemen</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=469e58149f0b">Manajemen</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/manajemen/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/manajemen/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/presensi/manage?t=e9aaf94ba71f">Presensi</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/presensi/manage?t=469e58149f0b">Presensi</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/presensi?t=e9aaf94ba71f">Presensi Masuk</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/rekap_presensi?t=e9aaf94ba71f">Rekap Presensi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/barcode?t=e9aaf94ba71f">Barcode Presensi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/jamjaga?t=e9aaf94ba71f">Jam Jaga</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/jadwal?t=e9aaf94ba71f">Jadwal Pegawai</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/jadwal_tambahan?t=e9aaf94ba71f">Jadwal Tambahan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/presensi?t=469e58149f0b">Presensi Masuk</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/rekap_presensi?t=469e58149f0b">Rekap Presensi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/barcode?t=469e58149f0b">Barcode Presensi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/jamjaga?t=469e58149f0b">Jam Jaga</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/jadwal?t=469e58149f0b">Jadwal Pegawai</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/jadwal_tambahan?t=469e58149f0b">Jadwal Tambahan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/presensi/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=e9aaf94ba71f">Rawat Jalan</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=469e58149f0b">Rawat Jalan</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=e9aaf94ba71f">Rawat Jalan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/booking?t=e9aaf94ba71f">Booking Registrasi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/bookingperiksa?t=e9aaf94ba71f">Booking Periksa</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/jadwal?t=e9aaf94ba71f">Jadwal Dokter</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=469e58149f0b">Rawat Jalan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/booking?t=469e58149f0b">Booking Registrasi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/bookingperiksa?t=469e58149f0b">Booking Periksa</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/rawat_jalan/jadwal?t=469e58149f0b">Jadwal Dokter</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/vedika/manage?t=e9aaf94ba71f">Vedika</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/vedika/manage?t=469e58149f0b">Vedika</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/manage?t=e9aaf94ba71f">Manage</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/index?t=e9aaf94ba71f">Index</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/lengkap?t=e9aaf94ba71f">Lengkap</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/pengajuan?t=e9aaf94ba71f">Pengajuan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/perbaikan?t=e9aaf94ba71f">Perbaikan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/mappinginacbgs?t=e9aaf94ba71f">Mapping Inacbgs</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/bridgingeklaim?t=e9aaf94ba71f">Bridging Eklaim</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/uservedika?t=e9aaf94ba71f">User Vedika</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/manage?t=469e58149f0b">Manage</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/index?t=469e58149f0b">Index</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/lengkap?t=469e58149f0b">Lengkap</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/pengajuan?t=469e58149f0b">Pengajuan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/perbaikan?t=469e58149f0b">Perbaikan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/mappinginacbgs?t=469e58149f0b">Mapping Inacbgs</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/bridgingeklaim?t=469e58149f0b">Bridging Eklaim</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/uservedika?t=469e58149f0b">User Vedika</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/vedika/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/profil/manage?t=e9aaf94ba71f">Profil</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/profil/manage?t=469e58149f0b">Profil</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/profil/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/profil/biodata?t=e9aaf94ba71f">Biodata</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/profil/presensi?t=e9aaf94ba71f">Presensi Masuk</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/profil/rekap_presensi?t=e9aaf94ba71f">Rekap Presensi</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/profil/jadwal?t=e9aaf94ba71f">Jadwal Pegawai</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/profil/ganti_pass?t=e9aaf94ba71f">Ganti Password</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/profil/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/profil/biodata?t=469e58149f0b">Biodata</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/profil/presensi?t=469e58149f0b">Presensi Masuk</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/profil/rekap_presensi?t=469e58149f0b">Rekap Presensi</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/profil/jadwal?t=469e58149f0b">Jadwal Pegawai</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/profil/ganti_pass?t=469e58149f0b">Ganti Password</a></li>
                                   </ul>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/orthanc/manage?t=e9aaf94ba71f">Orthanc</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/orthanc/manage?t=469e58149f0b">Orthanc</a>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=e9aaf94ba71f">Veronisa</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=469e58149f0b">Veronisa</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=e9aaf94ba71f">Manage</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/veronisa/index?t=e9aaf94ba71f">Index</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/veronisa/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=469e58149f0b">Manage</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/veronisa/index?t=469e58149f0b">Index</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/veronisa/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li > <a href="http://localhost/rumah-sakit/admin/kasir_rawat_jalan/manage?t=e9aaf94ba71f">Kasir Rawat Jalan</a>
+                            <li > <a href="http://localhost/rumah-sakit/admin/kasir_rawat_jalan/manage?t=469e58149f0b">Kasir Rawat Jalan</a>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=e9aaf94ba71f">Kepegawaian</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=469e58149f0b">Kepegawaian</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/kepegawaian/index?t=e9aaf94ba71f">Data Pegawai</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/kepegawaian/add?t=e9aaf94ba71f">Tambah Baru</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/kepegawaian/index?t=469e58149f0b">Data Pegawai</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/kepegawaian/add?t=469e58149f0b">Tambah Baru</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=e9aaf94ba71f">Farmasi</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=469e58149f0b">Farmasi</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/index?t=e9aaf94ba71f">Obat & BHP</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/opname?t=e9aaf94ba71f">Stok Opname</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/settings?t=e9aaf94ba71f">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/index?t=469e58149f0b">Obat & BHP</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/opname?t=469e58149f0b">Stok Opname</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/farmasi/settings?t=469e58149f0b">Pengaturan</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/modules/manage?t=e9aaf94ba71f">Modul-Modul</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/modules/manage?t=469e58149f0b">Modul-Modul</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/modules/manage?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/modules/upload?t=e9aaf94ba71f">Unggah</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/modules/manage?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/modules/upload?t=469e58149f0b">Unggah</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/users/index?t=e9aaf94ba71f">Pengguna</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/users/index?t=469e58149f0b">Pengguna</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/users/index?t=e9aaf94ba71f">Kelola</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/users/manage?t=e9aaf94ba71f">Data Pengguna</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/users/add?t=e9aaf94ba71f">Tambah Baru</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/users/index?t=469e58149f0b">Kelola</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/users/manage?t=469e58149f0b">Data Pengguna</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/users/add?t=469e58149f0b">Tambah Baru</a></li>
                                   </ul>
                               </li>
-                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/settings/manage?t=e9aaf94ba71f">Pengaturan</a>
+                            <li  class="dropdown-submenu" > <a href="http://localhost/rumah-sakit/admin/settings/manage?t=469e58149f0b">Pengaturan</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://localhost/rumah-sakit/admin/settings/manage?t=e9aaf94ba71f">Pengaturan</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/settings/general?t=e9aaf94ba71f">Umum</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/settings/theme?t=e9aaf94ba71f">Tema</a></li>
-                                    <li><a href="http://localhost/rumah-sakit/admin/settings/updates?t=e9aaf94ba71f">Pembaruan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/settings/manage?t=469e58149f0b">Pengaturan</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/settings/general?t=469e58149f0b">Umum</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/settings/theme?t=469e58149f0b">Tema</a></li>
+                                    <li><a href="http://localhost/rumah-sakit/admin/settings/updates?t=469e58149f0b">Pembaruan</a></li>
                                   </ul>
                               </li>
                           </ul>
@@ -496,9 +508,13 @@
           }
         </style>
         <ul class="nav navbar-nav navbar-right">
-
           <li>
-            <a href="http://localhost/rumah-sakit/admin/logout?t=e9aaf94ba71f" class="menolak-gelap" data-toggle="tooltip" data-placement="bottom"
+            <a id="fullscreen-button" class="menolak-gelap">
+              <i class="fas fa-expand-arrows-alt" style="color: grey;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://localhost/rumah-sakit/admin/logout?t=469e58149f0b" class="menolak-gelap" data-toggle="tooltip" data-placement="bottom"
               title="Keluar" style="color: black;"> <img src="http://localhost/rumah-sakit/themes/admin/img/logo.png" alt=""
                 style="border-radius: 50px;width:20px;"> Administrator</a>
           </li>
@@ -510,345 +526,24 @@
 
 
     
-        <style>
-  html {
-    height: 0;
-    background: url('http://localhost/rumah-sakit/uploads/settings/bg.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  body {
-    height: 0;
-  }
-
-  #content-wrapper {
-    top: 0;
-    background: transparent;
-  }
-
-  .dashboard_wall {
-    position: fixed;
-    bottom: 120px;
-    left: 80px;
-    width: 100%;
-
-    color: {
-      $settings['text_color']
-    }
-
-     !important;
-  }
-
-  p.title {
-    position: absolute;
-    bottom: 30px;
-    left: 140px;
-    font-size: 32px;
-    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-  }
-
-  p.alamat {
-    position: absolute;
-    bottom: 0px;
-    left: 140px;
-    font-size: 16px;
-    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-  }
-
-  div.coba {
-    position: relative !important;
-    top: 47px;
-    margin: 0 15px;
-    /* display: none; */
-  }
-
-  @media (max-width: 600px) {
-    .dashboard_wall {
-      position: fixed;
-      bottom: 100px;
-      left: 0px;
-      min-width: 600px;
-    }
-
-    img.logo {
-      width: 80px;
-    }
-
-    p.title {
-      position: absolute;
-      bottom: 20px;
-      left: 80px;
-      font-size: 18px;
-      text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-    }
-
-    p.alamat {
-      position: absolute;
-      bottom: 10px;
-      left: 80px;
-      font-size: 10px;
-      text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-    }
-
-    div.coba.halo {
-      position: absolute;
-      width: 82px;
-      height: 20px;
-      left: 80px;
-      top: 80px;
-
-      font-family: Graphik;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 20px;
-      /* identical to box height */
-
-
-      color: #FFFFFF;
-    }
-
-    div.coba {
-      position: relative;
-      width: 250px;
-      height: 144px;
-      left: 0px;
-      top: 130px;
-      margin: 0;
-
-      /* background: linear-gradient(269.6deg, #56549E 0.35%, #AEA1E6 101.48%); */
-      border-radius: 0px 20px 20px 0px;
-
-    }
-  }
-
-  @media (max-width: 768px) and (min-width: 601px) {
-    .dashboard_wall {
-      position: fixed;
-      bottom: 100px;
-      left: 0px;
-      min-width: 600px;
-    }
-
-    img.logo {
-      width: 80px;
-    }
-
-    p.title {
-      position: absolute;
-      bottom: 20px;
-      left: 80px;
-      font-size: 18px;
-      text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-    }
-
-    p.alamat {
-      position: absolute;
-      bottom: 10px;
-      left: 80px;
-      font-size: 10px;
-      text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-    }
-
-    div.coba.halo {
-      position: absolute;
-      width: 152px;
-      height: 20px;
-      left: 160px;
-      top: 420px;
-
-      font-family: Graphik;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 20px;
-      /* identical to box height */
-
-
-      color: #FFFFFF;
-    }
-
-    div.coba {
-      position: relative;
-      width: 365px;
-      height: 84px;
-      left: 0px;
-      top: 424px;
-      margin: 0;
-
-      /* background: linear-gradient(269.6deg, #56549E 0.35%, #AEA1E6 101.48%); */
-      border-radius: 0px 20px 20px 0px;
-
-    }
-  }
-
-  .badge-success {
-    background-color: #222;
-  }
-
-  .btn-group .btn-fab {
-    position: fixed !important;
-    right: 20px;
-    bottom: 60px;
-  }
-</style>
-
-<div class="dashboard_wall">
-  <img src="http://localhost/rumah-sakit/uploads/settings/logo12.png" class="logo" width="120px" alt="">
-  <!-- <p class="title">pintar sehat</p>
-  <p class="alamat">jalan hj.rekan pondok benda - pamulang - tangerang selatan</p> -->
-</div>
-<!-- <div class="btn-group">
-  <a href="javascript:void(0)" onclick="getDistanceFromLatLonInKm()" class="btn btn-danger btn-fab"
-    style="border-radius: 30px;">
-    <i class="fa fa-camera"></i> Presensi Online
-  </a>
-</div> -->
-<div class="alert alert-warning coba"
-  style="border-radius:10px;margin-top:100px;max-width:700px;margin-left:500px;padding:30px;" role="alert">
-  <div class="halo">
-    <h4 style="color: black;"><b>Halo Administrator</b></h4>
-    <!-- <br><i>* Jangan Lupa Bahagia *</i> -->
-  </div>
-  <i class="fa fa-exclamation-triangle"></i> Anda Belum Absen<br>
-  <!-- <div class="btn-group"> -->
-  <a href="javascript:void(0)" onclick="getDistanceFromLatLonInKm()" class="btn btn-danger btn-fab"
-    style="border-radius: 10px;margin-left:500px;background:#000080;border:none">
-    <i class="fa fa-camera"></i> Presensi Online
-  </a>
-  <!-- </div> -->
-</div>
-<!-- The Modal -->
-<div class="modal" id="myModal" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close"><a href="http://localhost/rumah-sakit/admin">Close <span
-              aria-hidden="true">&times;</span></a></button>
+        <section id="content-wrapper">
+      <div class="container-fluid content-wrapper">
+        <div class="row">
+          <div class="col-lg-12" style="margin-bottom:50px !important;">
+            <!-- <h2 class="content-title" style="color: #000080;"><a href="http://localhost/rumah-sakit/admin/pasien/manage?t=469e58149f0b"
+                style="color: #000080;">Pendaftaran Pasien</a> -->
+            <!-- <a
+                href="http://localhost/rumah-sakit/admin/dashboard/help/pasien?t=469e58149f0b" data-toggle="modal"
+                data-target="#moduleModal">
+                <span class="pull-right">
+                  <small class="hidden-xs">Help</small> <i
+                    class="fa fa-question-circle-o" aria-hidden="true"></i></span></a> -->
+            </h2>
+                      </div>
+        </div>
       </div>
-      <!-- Modal body -->
-      <div class="modal-body">
-        <center>
-          <div id="camera"></div><br>
-          <select class="form-control" id="shift" style="width:240px;">
-            <option>Pilih Shift</option>
-                      </select><br><br>
-          <input type="button" class="btn btn-info"
-            value="Presensi Masuk" data-dismiss="modal">
-          <input type="hidden" name="image" id="image-tag">
-          <div id="results"></div>
-        </center>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-    function getDistanceFromLatLonInKm() {
-    window.navigator.geolocation.getCurrentPosition(function(pos) {
-      console.log(pos);
-      var units = 'm';
-      var latitude2 = '-2.58';
-      var longitude2 = '115.37';
-      var latitude1 = pos.coords.latitude;
-      var longitude1 = pos.coords.longitude;
-      var theta = longitude1 - longitude2;
-      var p = Math.PI;
-      var degradlat1 = latitude1 * p / 180;
-      var degradlat2 = latitude2 * p / 180;
-      var degradtheta = theta * p / 180;
-      var c = Math.cos;
-      var s = Math.sin;
-      var a = (s(degradlat1) * s(degradlat2)) + (c(degradlat1) * c(degradlat2) * c(degradtheta));
-      var a = Math.acos(a);
-      var a = a * 180 / p;
-      var a = a * 60 * 1.1515;
-      var kilometers = a * 1.609344;
-      var meters = kilometers * 1000;
-
-      if(meters > 2) {
-        alert('Presensi harus di area Rumah Sakit!!')
-      } else {
-        $('#myModal').modal('show', function () {
-        });
-      }
-    },
-   	function handleError(error) {
-      // Display error based on the error code.
-      const { code } = error;
-      switch (code) {
-        case GeolocationPositionError.TIMEOUT:
-          // Handle timeout.
-          alert('Koneksi Terputus')
-          break;
-        case GeolocationPositionError.PERMISSION_DENIED:
-          // User denied the request.
-        alert('Aktifkan GPS dan Izin Lokasi!!')
-          break;
-        case GeolocationPositionError.POSITION_UNAVAILABLE:
-          // Position not available.
-              alert('Lokasi Tidak Ditemukan!!')
-          break;
-      }
-    },
-    {timeout: 5000 , maximumAge: 0});
-  }
-  
-  $(document).ready(function () {
-
-    $('#shift').selectator('destroy');
-
-    $('#shift').on('change', function () {
-      var shift = this.value;
-    });
-
-    $('#myModal').on('show.bs.modal', function () {
-      Webcam.set({
-        width: 240,
-        height: 240,
-        image_format: 'jpeg',
-        jpeg_quality: 90,
-        facingMode: {
-          exact: 'environment'
-        }
-      });
-      Webcam.attach('#camera');
-      getDistanceFromLatLonInKm();
-    });
-    $("#myModal").on("hidden.bs.modal", function () {
-
-      var getshift = shift.value;
-      var shutter = new Audio();
-      shutter.autoplay = false;
-      shutter.src = navigator.userAgent.match(/Firefox/) ? 'http://localhost/rumah-sakit/plugins/dashboard/audio/shutter.ogg' : 'http://localhost/rumah-sakit/plugins/dashboard/audio/shutter.mp3';
-      shutter.play();
-
-      Webcam.snap(function (data_uri) {
-        document.getElementById('results').innerHTML = '<img id="imageprev" src="' + data_uri + '"/>';
-      });
-
-      var base64image = document.getElementById("imageprev").src;
-
-      Webcam.upload(base64image, 'http://localhost/rumah-sakit/admin/dashboard/upload?t=e9aaf94ba71f&shift=' + getshift, function (code, text) {
-      });
-
-      Webcam.reset();
-
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          $.post('http://localhost/rumah-sakit/admin/dashboard/geolocation?t=e9aaf94ba71f', { lat: position.coords.latitude, lng: position.coords.longitude });
-        },
-        function error(err) { },
-        { enableHighAccuracy: true, timeout: 5000 }
-      );
-
-      window.location.href = 'http://localhost/rumah-sakit/admin';
-
-    });
-  });
-</script>        <div class="sidebar" style="position: fixed;">
+    </section>
+        <div class="sidebar" style="position: fixed;">
       <a href="#" class="menolak-terang">
         <img class="logo" src="http://localhost/rumah-sakit/uploads/settings/logo12.png" alt="" style="width: 60px;">
         <h4 style="color: white;">PintarSehat</h4>
@@ -856,13 +551,13 @@
       <a href="#" data-toggle="modal" data-target="#menuModal">
         <i class="fas fa-home"></i> Menu
       </a>
-            <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=e9aaf94ba71f" > <i class="fas fa-user"></i> Pasien
+            <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=469e58149f0b" > <i class="fas fa-user"></i> Pasien
       </a>
-                        <a href="http://localhost/rumah-sakit/admin/igd/manage?t=e9aaf94ba71f" > <i class="fas fa-medkit"></i> IGD
+                        <a href="http://localhost/rumah-sakit/admin/igd/manage?t=469e58149f0b" > <i class="fas fa-medkit"></i> IGD
       </a>
-                  <a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=e9aaf94ba71f" > <i class="fas fa-wheelchair"></i> Rawat Jalan
+                  <a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=469e58149f0b" > <i class="fas fa-wheelchair"></i> Rawat Jalan
       </a>
-                  <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=e9aaf94ba71f" > <i class="fas fa-bed"></i> Rawat Inap
+                  <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=469e58149f0b" > <i class="fas fa-bed"></i> Rawat Inap
       </a>
                         <div class="dropdown">
         <a class="dropdown-toggle" href="#">
@@ -894,143 +589,143 @@
         <div class="dropdown-content2">
           <a href="#" data-toggle="modal" data-target="#tentangModal"> Tentang</a>
           <a href="#" data-toggle="modal" data-target="#bantuanModal"> Bantuan</a>
-          <a href="http://localhost/rumah-sakit/admin/logout?t=e9aaf94ba71f"> Logout</a>
-          <!--                                                   <a href="http://localhost/rumah-sakit/admin/master/manage?t=e9aaf94ba71f">Manage</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/dokter?t=e9aaf94ba71f">Dokter</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/petugas?t=e9aaf94ba71f">Petugas</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/poliklinik?t=e9aaf94ba71f">Poliklinik</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/bangsal?t=e9aaf94ba71f">Bangsal</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/kamar?t=e9aaf94ba71f">Kamar</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/databarang?t=e9aaf94ba71f">Data Barang</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawatan?t=e9aaf94ba71f">Perawatan Ralan</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawataninap?t=e9aaf94ba71f">Perawatan Ranap</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawatanlab?t=e9aaf94ba71f">Perawatan Laboratorium</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawatanradiologi?t=e9aaf94ba71f">Perawatan Radiologi</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/bahasa?t=e9aaf94ba71f">Bahasa</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/cacat?t=e9aaf94ba71f">Cacat Fisik</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/suku?t=e9aaf94ba71f">Suku Bangsa</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/perusahaan?t=e9aaf94ba71f">Perusahaan Pasien</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/penjab?t=e9aaf94ba71f">Penanggung Jawab</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/golonganbarang?t=e9aaf94ba71f">Golongan Barang</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/industrifarmasi?t=e9aaf94ba71f">Industri Farmasi</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/jenis?t=e9aaf94ba71f">Jenis Barang</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/kategoribarang?t=e9aaf94ba71f">Kategori Barang</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/kategoripenyakit?t=e9aaf94ba71f">Kategori Penyakit</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/kategoriperawatan?t=e9aaf94ba71f">Kategori Perawatan</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/kodesatuan?t=e9aaf94ba71f">Kode Satuan</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/masteraturanpakai?t=e9aaf94ba71f">Master Aturan Pakai</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/masterberkasdigital?t=e9aaf94ba71f">Master Berkas Digital</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/spesialis?t=e9aaf94ba71f">Spesialis</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/bank?t=e9aaf94ba71f">Bank</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/bidang?t=e9aaf94ba71f">Bidang</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/departemen?t=e9aaf94ba71f">Departemen</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/emergencyindex?t=e9aaf94ba71f">Emergency Index</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/jabatan?t=e9aaf94ba71f">Jabatan</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/jenjangjabatan?t=e9aaf94ba71f">Jenjang Jabatan</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/kelompokjabatan?t=e9aaf94ba71f">Kelompok Jabatan</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/pendidikan?t=e9aaf94ba71f">Pendidikan</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/resikokerja?t=e9aaf94ba71f">Resiko Kerja</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/statuskerja?t=e9aaf94ba71f">Status Kerja</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/statuswp?t=e9aaf94ba71f">Status WP</a>
-                    <a href="http://localhost/rumah-sakit/admin/master/metoderacik?t=e9aaf94ba71f">Metode Racik</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=e9aaf94ba71f">Manage</a>
-                    <a href="http://localhost/rumah-sakit/admin/wagateway/sendmessage?t=e9aaf94ba71f">Send Message</a>
-                    <a href="http://localhost/rumah-sakit/admin/wagateway/sendimage?t=e9aaf94ba71f">Send Image</a>
-                    <a href="http://localhost/rumah-sakit/admin/wagateway/sendfile?t=e9aaf94ba71f">Send File</a>
-                    <a href="http://localhost/rumah-sakit/admin/wagateway/settings?t=e9aaf94ba71f">Settings</a>
-                                                                                                                                                                                                                                                                                                            <a href="http://localhost/rumah-sakit/admin/operasi/manage?t=e9aaf94ba71f">Manage</a>
-                    <a href="http://localhost/rumah-sakit/admin/operasi/pasienoperasi?t=e9aaf94ba71f">Pasien Operasi</a>
-                    <a href="http://localhost/rumah-sakit/admin/operasi/bookingoperasi?t=e9aaf94ba71f">Booking Operasi</a>
-                    <a href="http://localhost/rumah-sakit/admin/operasi/paketoperasi?t=e9aaf94ba71f">Paket Operasi</a>
-                    <a href="http://localhost/rumah-sakit/admin/operasi/obatoperasi?t=e9aaf94ba71f">Obat Operasi</a>
-                    <a href="http://localhost/rumah-sakit/admin/operasi/laporanoperasi?t=e9aaf94ba71f">Laporan Operasi</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/anjungan/index?t=e9aaf94ba71f">Display</a>
-                    <a href="http://localhost/rumah-sakit/admin/anjungan/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/api/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/api/notifikasi?t=e9aaf94ba71f">Notifikasi APAM</a>
-                    <a href="http://localhost/rumah-sakit/admin/api/settingsapam?t=e9aaf94ba71f">Pengaturan APAM</a>
-                    <a href="http://localhost/rumah-sakit/admin/api/paymentduitku?t=e9aaf94ba71f">Payment Duitku</a>
-                    <a href="http://localhost/rumah-sakit/admin/api/settingskey?t=e9aaf94ba71f">Pengaturan API Key</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/index?t=e9aaf94ba71f">Katalog</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingpoli?t=e9aaf94ba71f">Mapping Poliklinik</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingpoli?t=e9aaf94ba71f">Add Mapping Poliklinik</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingdokter?t=e9aaf94ba71f">Mapping Dokter</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingdokter?t=e9aaf94ba71f">Add Mapping Dokter</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/jadwaldokter?t=e9aaf94ba71f">Jadwal Dokter HFIS</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/bookingantrol?t=e9aaf94ba71f">Data Booking Antrol</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/taskid?t=e9aaf94ba71f">Task ID</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/antrol?t=e9aaf94ba71f">Dashboard Antrol BPJS</a>
-                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/referensi?t=e9aaf94ba71f">Referensi</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/peserta?t=e9aaf94ba71f">Peserta</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/rencanakontrol?t=e9aaf94ba71f">Rencana Kontrol</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/sep?t=e9aaf94ba71f">SEP</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/rujukan?t=e9aaf94ba71f">Rujukan</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/prb?t=e9aaf94ba71f">PRB</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/lpk?t=e9aaf94ba71f">Lembar Pengajuan Klaim</a>
-                    <a href="http://localhost/rumah-sakit/admin/vclaim/monitoring?t=e9aaf94ba71f">Monitoring</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/akunrekening?t=e9aaf94ba71f">Akun Rekening</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/rekeningtahun?t=e9aaf94ba71f">Rekening Tahun</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/pengaturanrekening?t=e9aaf94ba71f">Pengaturan Rekening</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/postingjurnal?t=e9aaf94ba71f">Posting Jurnal</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/jurnalharian?t=e9aaf94ba71f">Jurnal Harian</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/bukubesar?t=e9aaf94ba71f">Buku Besar</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/cashflow?t=e9aaf94ba71f">Cash Flow</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/neraca?t=e9aaf94ba71f">Neraca Keuangan</a>
-                    <a href="http://localhost/rumah-sakit/admin/keuangan/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/manajemen/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/presensi/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/presensi/presensi?t=e9aaf94ba71f">Presensi Masuk</a>
-                    <a href="http://localhost/rumah-sakit/admin/presensi/rekap_presensi?t=e9aaf94ba71f">Rekap Presensi</a>
-                    <a href="http://localhost/rumah-sakit/admin/presensi/barcode?t=e9aaf94ba71f">Barcode Presensi</a>
-                    <a href="http://localhost/rumah-sakit/admin/presensi/jamjaga?t=e9aaf94ba71f">Jam Jaga</a>
-                    <a href="http://localhost/rumah-sakit/admin/presensi/jadwal?t=e9aaf94ba71f">Jadwal Pegawai</a>
-                    <a href="http://localhost/rumah-sakit/admin/presensi/jadwal_tambahan?t=e9aaf94ba71f">Jadwal Tambahan</a>
-                    <a href="http://localhost/rumah-sakit/admin/presensi/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=e9aaf94ba71f">Rawat Jalan</a>
-                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/booking?t=e9aaf94ba71f">Booking Registrasi</a>
-                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/bookingperiksa?t=e9aaf94ba71f">Booking Periksa</a>
-                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/jadwal?t=e9aaf94ba71f">Jadwal Dokter</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/vedika/manage?t=e9aaf94ba71f">Manage</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/index?t=e9aaf94ba71f">Index</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/lengkap?t=e9aaf94ba71f">Lengkap</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/pengajuan?t=e9aaf94ba71f">Pengajuan</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/perbaikan?t=e9aaf94ba71f">Perbaikan</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/mappinginacbgs?t=e9aaf94ba71f">Mapping Inacbgs</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/bridgingeklaim?t=e9aaf94ba71f">Bridging Eklaim</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/uservedika?t=e9aaf94ba71f">User Vedika</a>
-                    <a href="http://localhost/rumah-sakit/admin/vedika/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/profil/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/profil/biodata?t=e9aaf94ba71f">Biodata</a>
-                    <a href="http://localhost/rumah-sakit/admin/profil/presensi?t=e9aaf94ba71f">Presensi Masuk</a>
-                    <a href="http://localhost/rumah-sakit/admin/profil/rekap_presensi?t=e9aaf94ba71f">Rekap Presensi</a>
-                    <a href="http://localhost/rumah-sakit/admin/profil/jadwal?t=e9aaf94ba71f">Jadwal Pegawai</a>
-                    <a href="http://localhost/rumah-sakit/admin/profil/ganti_pass?t=e9aaf94ba71f">Ganti Password</a>
-                                                                                <a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=e9aaf94ba71f">Manage</a>
-                    <a href="http://localhost/rumah-sakit/admin/veronisa/index?t=e9aaf94ba71f">Index</a>
-                    <a href="http://localhost/rumah-sakit/admin/veronisa/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                                                <a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/kepegawaian/index?t=e9aaf94ba71f">Data Pegawai</a>
-                    <a href="http://localhost/rumah-sakit/admin/kepegawaian/add?t=e9aaf94ba71f">Tambah Baru</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/farmasi/index?t=e9aaf94ba71f">Obat & BHP</a>
-                    <a href="http://localhost/rumah-sakit/admin/farmasi/opname?t=e9aaf94ba71f">Stok Opname</a>
-                    <a href="http://localhost/rumah-sakit/admin/farmasi/settings?t=e9aaf94ba71f">Pengaturan</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/modules/manage?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/modules/upload?t=e9aaf94ba71f">Unggah</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/users/index?t=e9aaf94ba71f">Kelola</a>
-                    <a href="http://localhost/rumah-sakit/admin/users/manage?t=e9aaf94ba71f">Data Pengguna</a>
-                    <a href="http://localhost/rumah-sakit/admin/users/add?t=e9aaf94ba71f">Tambah Baru</a>
-                                                            <a href="http://localhost/rumah-sakit/admin/settings/manage?t=e9aaf94ba71f">Pengaturan</a>
-                    <a href="http://localhost/rumah-sakit/admin/settings/general?t=e9aaf94ba71f">Umum</a>
-                    <a href="http://localhost/rumah-sakit/admin/settings/theme?t=e9aaf94ba71f">Tema</a>
-                    <a href="http://localhost/rumah-sakit/admin/settings/updates?t=e9aaf94ba71f">Pembaruan</a>
+          <a href="http://localhost/rumah-sakit/admin/logout?t=469e58149f0b"> Logout</a>
+          <!--                                                   <a href="http://localhost/rumah-sakit/admin/master/manage?t=469e58149f0b">Manage</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/dokter?t=469e58149f0b">Dokter</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/petugas?t=469e58149f0b">Petugas</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/poliklinik?t=469e58149f0b">Poliklinik</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/bangsal?t=469e58149f0b">Bangsal</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/kamar?t=469e58149f0b">Kamar</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/databarang?t=469e58149f0b">Data Barang</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawatan?t=469e58149f0b">Perawatan Ralan</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawataninap?t=469e58149f0b">Perawatan Ranap</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawatanlab?t=469e58149f0b">Perawatan Laboratorium</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/jnsperawatanradiologi?t=469e58149f0b">Perawatan Radiologi</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/bahasa?t=469e58149f0b">Bahasa</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/cacat?t=469e58149f0b">Cacat Fisik</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/suku?t=469e58149f0b">Suku Bangsa</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/perusahaan?t=469e58149f0b">Perusahaan Pasien</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/penjab?t=469e58149f0b">Penanggung Jawab</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/golonganbarang?t=469e58149f0b">Golongan Barang</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/industrifarmasi?t=469e58149f0b">Industri Farmasi</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/jenis?t=469e58149f0b">Jenis Barang</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/kategoribarang?t=469e58149f0b">Kategori Barang</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/kategoripenyakit?t=469e58149f0b">Kategori Penyakit</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/kategoriperawatan?t=469e58149f0b">Kategori Perawatan</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/kodesatuan?t=469e58149f0b">Kode Satuan</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/masteraturanpakai?t=469e58149f0b">Master Aturan Pakai</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/masterberkasdigital?t=469e58149f0b">Master Berkas Digital</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/spesialis?t=469e58149f0b">Spesialis</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/bank?t=469e58149f0b">Bank</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/bidang?t=469e58149f0b">Bidang</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/departemen?t=469e58149f0b">Departemen</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/emergencyindex?t=469e58149f0b">Emergency Index</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/jabatan?t=469e58149f0b">Jabatan</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/jenjangjabatan?t=469e58149f0b">Jenjang Jabatan</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/kelompokjabatan?t=469e58149f0b">Kelompok Jabatan</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/pendidikan?t=469e58149f0b">Pendidikan</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/resikokerja?t=469e58149f0b">Resiko Kerja</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/statuskerja?t=469e58149f0b">Status Kerja</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/statuswp?t=469e58149f0b">Status WP</a>
+                    <a href="http://localhost/rumah-sakit/admin/master/metoderacik?t=469e58149f0b">Metode Racik</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=469e58149f0b">Manage</a>
+                    <a href="http://localhost/rumah-sakit/admin/wagateway/sendmessage?t=469e58149f0b">Send Message</a>
+                    <a href="http://localhost/rumah-sakit/admin/wagateway/sendimage?t=469e58149f0b">Send Image</a>
+                    <a href="http://localhost/rumah-sakit/admin/wagateway/sendfile?t=469e58149f0b">Send File</a>
+                    <a href="http://localhost/rumah-sakit/admin/wagateway/settings?t=469e58149f0b">Settings</a>
+                                                                                                                                                                                                                                                                                                            <a href="http://localhost/rumah-sakit/admin/operasi/manage?t=469e58149f0b">Manage</a>
+                    <a href="http://localhost/rumah-sakit/admin/operasi/pasienoperasi?t=469e58149f0b">Pasien Operasi</a>
+                    <a href="http://localhost/rumah-sakit/admin/operasi/bookingoperasi?t=469e58149f0b">Booking Operasi</a>
+                    <a href="http://localhost/rumah-sakit/admin/operasi/paketoperasi?t=469e58149f0b">Paket Operasi</a>
+                    <a href="http://localhost/rumah-sakit/admin/operasi/obatoperasi?t=469e58149f0b">Obat Operasi</a>
+                    <a href="http://localhost/rumah-sakit/admin/operasi/laporanoperasi?t=469e58149f0b">Laporan Operasi</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/anjungan/index?t=469e58149f0b">Display</a>
+                    <a href="http://localhost/rumah-sakit/admin/anjungan/settings?t=469e58149f0b">Pengaturan</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/api/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/api/notifikasi?t=469e58149f0b">Notifikasi APAM</a>
+                    <a href="http://localhost/rumah-sakit/admin/api/settingsapam?t=469e58149f0b">Pengaturan APAM</a>
+                    <a href="http://localhost/rumah-sakit/admin/api/paymentduitku?t=469e58149f0b">Payment Duitku</a>
+                    <a href="http://localhost/rumah-sakit/admin/api/settingskey?t=469e58149f0b">Pengaturan API Key</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/index?t=469e58149f0b">Katalog</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingpoli?t=469e58149f0b">Mapping Poliklinik</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingpoli?t=469e58149f0b">Add Mapping Poliklinik</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/mappingdokter?t=469e58149f0b">Mapping Dokter</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/addmappingdokter?t=469e58149f0b">Add Mapping Dokter</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/jadwaldokter?t=469e58149f0b">Jadwal Dokter HFIS</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/bookingantrol?t=469e58149f0b">Data Booking Antrol</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/taskid?t=469e58149f0b">Task ID</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/antrol?t=469e58149f0b">Dashboard Antrol BPJS</a>
+                    <a href="http://localhost/rumah-sakit/admin/jkn_mobile/settings?t=469e58149f0b">Pengaturan</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/referensi?t=469e58149f0b">Referensi</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/peserta?t=469e58149f0b">Peserta</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/rencanakontrol?t=469e58149f0b">Rencana Kontrol</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/sep?t=469e58149f0b">SEP</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/rujukan?t=469e58149f0b">Rujukan</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/prb?t=469e58149f0b">PRB</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/lpk?t=469e58149f0b">Lembar Pengajuan Klaim</a>
+                    <a href="http://localhost/rumah-sakit/admin/vclaim/monitoring?t=469e58149f0b">Monitoring</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/akunrekening?t=469e58149f0b">Akun Rekening</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/rekeningtahun?t=469e58149f0b">Rekening Tahun</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/pengaturanrekening?t=469e58149f0b">Pengaturan Rekening</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/postingjurnal?t=469e58149f0b">Posting Jurnal</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/jurnalharian?t=469e58149f0b">Jurnal Harian</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/bukubesar?t=469e58149f0b">Buku Besar</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/cashflow?t=469e58149f0b">Cash Flow</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/neraca?t=469e58149f0b">Neraca Keuangan</a>
+                    <a href="http://localhost/rumah-sakit/admin/keuangan/settings?t=469e58149f0b">Pengaturan</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/manajemen/settings?t=469e58149f0b">Pengaturan</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/presensi/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/presensi/presensi?t=469e58149f0b">Presensi Masuk</a>
+                    <a href="http://localhost/rumah-sakit/admin/presensi/rekap_presensi?t=469e58149f0b">Rekap Presensi</a>
+                    <a href="http://localhost/rumah-sakit/admin/presensi/barcode?t=469e58149f0b">Barcode Presensi</a>
+                    <a href="http://localhost/rumah-sakit/admin/presensi/jamjaga?t=469e58149f0b">Jam Jaga</a>
+                    <a href="http://localhost/rumah-sakit/admin/presensi/jadwal?t=469e58149f0b">Jadwal Pegawai</a>
+                    <a href="http://localhost/rumah-sakit/admin/presensi/jadwal_tambahan?t=469e58149f0b">Jadwal Tambahan</a>
+                    <a href="http://localhost/rumah-sakit/admin/presensi/settings?t=469e58149f0b">Pengaturan</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=469e58149f0b">Rawat Jalan</a>
+                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/booking?t=469e58149f0b">Booking Registrasi</a>
+                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/bookingperiksa?t=469e58149f0b">Booking Periksa</a>
+                    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/jadwal?t=469e58149f0b">Jadwal Dokter</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/vedika/manage?t=469e58149f0b">Manage</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/index?t=469e58149f0b">Index</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/lengkap?t=469e58149f0b">Lengkap</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/pengajuan?t=469e58149f0b">Pengajuan</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/perbaikan?t=469e58149f0b">Perbaikan</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/mappinginacbgs?t=469e58149f0b">Mapping Inacbgs</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/bridgingeklaim?t=469e58149f0b">Bridging Eklaim</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/uservedika?t=469e58149f0b">User Vedika</a>
+                    <a href="http://localhost/rumah-sakit/admin/vedika/settings?t=469e58149f0b">Pengaturan</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/profil/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/profil/biodata?t=469e58149f0b">Biodata</a>
+                    <a href="http://localhost/rumah-sakit/admin/profil/presensi?t=469e58149f0b">Presensi Masuk</a>
+                    <a href="http://localhost/rumah-sakit/admin/profil/rekap_presensi?t=469e58149f0b">Rekap Presensi</a>
+                    <a href="http://localhost/rumah-sakit/admin/profil/jadwal?t=469e58149f0b">Jadwal Pegawai</a>
+                    <a href="http://localhost/rumah-sakit/admin/profil/ganti_pass?t=469e58149f0b">Ganti Password</a>
+                                                                                <a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=469e58149f0b">Manage</a>
+                    <a href="http://localhost/rumah-sakit/admin/veronisa/index?t=469e58149f0b">Index</a>
+                    <a href="http://localhost/rumah-sakit/admin/veronisa/settings?t=469e58149f0b">Pengaturan</a>
+                                                                                <a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/kepegawaian/index?t=469e58149f0b">Data Pegawai</a>
+                    <a href="http://localhost/rumah-sakit/admin/kepegawaian/add?t=469e58149f0b">Tambah Baru</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/farmasi/index?t=469e58149f0b">Obat & BHP</a>
+                    <a href="http://localhost/rumah-sakit/admin/farmasi/opname?t=469e58149f0b">Stok Opname</a>
+                    <a href="http://localhost/rumah-sakit/admin/farmasi/settings?t=469e58149f0b">Pengaturan</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/modules/manage?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/modules/upload?t=469e58149f0b">Unggah</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/users/index?t=469e58149f0b">Kelola</a>
+                    <a href="http://localhost/rumah-sakit/admin/users/manage?t=469e58149f0b">Data Pengguna</a>
+                    <a href="http://localhost/rumah-sakit/admin/users/add?t=469e58149f0b">Tambah Baru</a>
+                                                            <a href="http://localhost/rumah-sakit/admin/settings/manage?t=469e58149f0b">Pengaturan</a>
+                    <a href="http://localhost/rumah-sakit/admin/settings/general?t=469e58149f0b">Umum</a>
+                    <a href="http://localhost/rumah-sakit/admin/settings/theme?t=469e58149f0b">Tema</a>
+                    <a href="http://localhost/rumah-sakit/admin/settings/updates?t=469e58149f0b">Pembaruan</a>
                                -->
         </div>
       </div>
@@ -1043,19 +738,19 @@
           Basoro</b>.</a>
       Powered by <a href="https://mlite.id/">Pintar Sehat</a>.
     </p>
-    <p><i class="fa fa-fw fa-calendar"></i> <span>Senin, 14 Agustus 2023</span> <i class="fa fa-fw fa-clock-o"></i><span
+    <p><i class="fa fa-fw fa-calendar"></i> <span>Selasa, 15 Agustus 2023</span> <i class="fa fa-fw fa-clock-o"></i><span
         id="clock"></span> <i class="fa fa-fw fa-user"></i> <span>Login sebagai <strong>Administrator</strong></span></p>
   </footer>
 
     <div class="icon-bar hidden-lg hidden-md">
     <a href="#" data-toggle="modal" data-target="#menuModal"><i class="fa fa-home"></i></a>
-    <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=e9aaf94ba71f" > <i
+    <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=469e58149f0b" > <i
       class="fa fa-users"></i></a>
-    <a href="http://localhost/rumah-sakit/admin/igd/manage?t=e9aaf94ba71f" > <i
+    <a href="http://localhost/rumah-sakit/admin/igd/manage?t=469e58149f0b" > <i
       class="fa fa-ambulance"></i></a>
-    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=e9aaf94ba71f" > <i
+    <a href="http://localhost/rumah-sakit/admin/rawat_jalan/manage?t=469e58149f0b" > <i
       class="fa fa-wheelchair"></i></a>
-    <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=e9aaf94ba71f" > <i
+    <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=469e58149f0b" > <i
       class="fa fa-hotel"></i></a>
   </div>
   
@@ -1088,9 +783,9 @@
           <div class="row">
             <ul id="list_modul" class="modules" style="padding:0;margin:0;">
                             <li class="module" data-module="dashboard">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/dashboard/main?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/dashboard/main?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-home"></i>
                       <div class="desc">
                         Akses cepat pada modul dan berita.                      </div>
@@ -1100,9 +795,9 @@
                 </div>
               </li>
                             <li class="module" data-module="master">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/master/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/master/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-cubes"></i>
                       <div class="desc">
                         Data master awal Pintar Sehat                      </div>
@@ -1112,9 +807,9 @@
                 </div>
               </li>
                             <li class="module" data-module="wagateway">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/wagateway/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-whatsapp"></i>
                       <div class="desc">
                         Modul Whatsapp Gateway Pintar Sehat                      </div>
@@ -1124,9 +819,9 @@
                 </div>
               </li>
                             <li class="module" data-module="apotek_ralan">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/apotek_ralan/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/apotek_ralan/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-shopping-cart"></i>
                       <div class="desc">
                         Modul apotek rawat jalan untuk Pintar Sehat                      </div>
@@ -1136,9 +831,9 @@
                 </div>
               </li>
                             <li class="module" data-module="dokter_ralan">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/dokter_ralan/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/dokter_ralan/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-user-md"></i>
                       <div class="desc">
                         Modul dokter rawat jalan untuk Pintar Sehat                      </div>
@@ -1148,9 +843,9 @@
                 </div>
               </li>
                             <li class="module" data-module="igd">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/igd/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/igd/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-ambulance"></i>
                       <div class="desc">
                         Modul igd untuk Pintar Sehat                      </div>
@@ -1160,9 +855,9 @@
                 </div>
               </li>
                             <li class="module" data-module="dokter_igd">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/dokter_igd/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/dokter_igd/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-user-md"></i>
                       <div class="desc">
                         Modul dokter IGD untuk Pintar Sehat                      </div>
@@ -1172,9 +867,9 @@
                 </div>
               </li>
                             <li class="module" data-module="laboratorium">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/laboratorium/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/laboratorium/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-flask"></i>
                       <div class="desc">
                         Modul Laboratorium untuk Pintar Sehat                      </div>
@@ -1184,9 +879,9 @@
                 </div>
               </li>
                             <li class="module" data-module="radiologi">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/radiologi/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/radiologi/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-film"></i>
                       <div class="desc">
                         Modul Radiologi untuk Pintar Sehat                      </div>
@@ -1196,9 +891,9 @@
                 </div>
               </li>
                             <li class="module" data-module="icd">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/icd/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/icd/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-database"></i>
                       <div class="desc">
                         Modul ICD 9 - 10 untuk Pintar Sehat                      </div>
@@ -1208,9 +903,9 @@
                 </div>
               </li>
                             <li class="module" data-module="rawat_inap">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/rawat_inap/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-hotel"></i>
                       <div class="desc">
                         Modul rawat inap untuk Pintar Sehat                      </div>
@@ -1220,9 +915,9 @@
                 </div>
               </li>
                             <li class="module" data-module="apotek_ranap">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/apotek_ranap/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/apotek_ranap/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-shopping-cart"></i>
                       <div class="desc">
                         Modul apotek rawat inap untuk Pintar Sehat                      </div>
@@ -1232,9 +927,9 @@
                 </div>
               </li>
                             <li class="module" data-module="pasien">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/pasien/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-users"></i>
                       <div class="desc">
                         Modul data pasien untuk Pintar Sehat                      </div>
@@ -1244,9 +939,9 @@
                 </div>
               </li>
                             <li class="module" data-module="dokter_ranap">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/dokter_ranap/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/dokter_ranap/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-user-md"></i>
                       <div class="desc">
                         Modul dokter rawat inap untuk Pintar Sehat                      </div>
@@ -1256,9 +951,9 @@
                 </div>
               </li>
                             <li class="module" data-module="kasir_rawat_inap">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/kasir_rawat_inap/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/kasir_rawat_inap/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-money"></i>
                       <div class="desc">
                         Modul kasir rawat inap untuk Pintar Sehat                      </div>
@@ -1268,9 +963,9 @@
                 </div>
               </li>
                             <li class="module" data-module="operasi">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/operasi/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/operasi/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-bolt"></i>
                       <div class="desc">
                         Modul operasi dan VK di Pintar Sehat                      </div>
@@ -1280,9 +975,9 @@
                 </div>
               </li>
                             <li class="module" data-module="anjungan">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/anjungan/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-desktop"></i>
                       <div class="desc">
                         Modul anjungan pasien rawat jalan                      </div>
@@ -1292,9 +987,9 @@
                 </div>
               </li>
                             <li class="module" data-module="api">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/api/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/api/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-database"></i>
                       <div class="desc">
                         Katalog API Pintar Sehat                      </div>
@@ -1304,9 +999,9 @@
                 </div>
               </li>
                             <li class="module" data-module="jkn_mobile">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/jkn_mobile/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-tasks"></i>
                       <div class="desc">
                         Modul Pintar Sehat JKN Mobile API                      </div>
@@ -1316,9 +1011,9 @@
                 </div>
               </li>
                             <li class="module" data-module="vclaim">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/vclaim/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-database"></i>
                       <div class="desc">
                         Modul vclaim api untuk Pintar Sehat                      </div>
@@ -1328,9 +1023,9 @@
                 </div>
               </li>
                             <li class="module" data-module="keuangan">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/keuangan/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-money"></i>
                       <div class="desc">
                         Modul Keuangan untuk Pintar Sehat                      </div>
@@ -1340,9 +1035,9 @@
                 </div>
               </li>
                             <li class="module" data-module="manajemen">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/manajemen/dashboard?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-dashboard"></i>
                       <div class="desc">
                         Modul manajemen untuk Pintar Sehat                      </div>
@@ -1352,9 +1047,9 @@
                 </div>
               </li>
                             <li class="module" data-module="presensi">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/presensi/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/presensi/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-user-o"></i>
                       <div class="desc">
                         Modul presensi                      </div>
@@ -1364,9 +1059,9 @@
                 </div>
               </li>
                             <li class="module" data-module="rawat_jalan">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/rawat_jalan/index?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-wheelchair"></i>
                       <div class="desc">
                         Modul pendaftaran layanan untuk Pintar Sehat                      </div>
@@ -1376,9 +1071,9 @@
                 </div>
               </li>
                             <li class="module" data-module="vedika">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/vedika/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/vedika/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-code"></i>
                       <div class="desc">
                         Modul klaim online Vedika BPJS                      </div>
@@ -1388,9 +1083,9 @@
                 </div>
               </li>
                             <li class="module" data-module="profil">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/profil/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/profil/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-address-book"></i>
                       <div class="desc">
                         Modul profil                      </div>
@@ -1400,9 +1095,9 @@
                 </div>
               </li>
                             <li class="module" data-module="orthanc">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/orthanc/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/orthanc/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-bolt"></i>
                       <div class="desc">
                         Bridging PACS via Orthanc                      </div>
@@ -1412,9 +1107,9 @@
                 </div>
               </li>
                             <li class="module" data-module="veronisa">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/veronisa/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-medkit"></i>
                       <div class="desc">
                         Modul Verifikasi Obat Kronis                      </div>
@@ -1424,9 +1119,9 @@
                 </div>
               </li>
                             <li class="module" data-module="kasir_rawat_jalan">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/kasir_rawat_jalan/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/kasir_rawat_jalan/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-money"></i>
                       <div class="desc">
                         Modul kasir rawat jalan untuk Pintar Sehat                      </div>
@@ -1436,9 +1131,9 @@
                 </div>
               </li>
                             <li class="module" data-module="kepegawaian">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/kepegawaian/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-group"></i>
                       <div class="desc">
                         Pengelolaan data kepegawaian Pintar Sehat.                      </div>
@@ -1448,9 +1143,9 @@
                 </div>
               </li>
                             <li class="module" data-module="farmasi">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/farmasi/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-medkit"></i>
                       <div class="desc">
                         Pengelolaan data gudang farmasi.                      </div>
@@ -1460,9 +1155,9 @@
                 </div>
               </li>
                             <li class="module" data-module="modules">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/modules/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/modules/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-plug"></i>
                       <div class="desc">
                         Pengelolaan modul                      </div>
@@ -1472,9 +1167,9 @@
                 </div>
               </li>
                             <li class="module" data-module="users">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/users/index?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/users/index?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-user"></i>
                       <div class="desc">
                         Pengelolaan pengguna                      </div>
@@ -1484,9 +1179,9 @@
                 </div>
               </li>
                             <li class="module" data-module="settings">
-                <div class="panel panel-default">
-                  <a href="http://localhost/rumah-sakit/admin/settings/manage?t=e9aaf94ba71f" class="panel-body text-center">
-                    <div class="panel-thumb" style="background: white;">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="http://localhost/rumah-sakit/admin/settings/manage?t=469e58149f0b" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
                       <i class="fa fa-wrench"></i>
                       <div class="desc">
                         Pengelolaan pengaturan                      </div>
@@ -1539,7 +1234,6 @@
             <p>The awesome SIMRS Khanza alternate<br>
               <b>Successor of KhanzaLITE</b><br>
               Clean, Light and Modular Medical Management Systems</p>
-        
             <p>Thank you to our main sponsors <span class="badge badge-info badge-style-light">RSUD H. Damanhuri
                 Barabai</span> and <span class="badge badge-warning badge-style-light">RS Aura Syifa Kediri</span>. Also
               Klinik Utama Cahaya Imani Kandangan, RSIA Muntilan Magelang, RSU Ceria Kandangan, RSUD Datu Sanggul
@@ -1584,8 +1278,35 @@
     });
   </script>
   <!-- End PWA Support -->
-  <script src="http://localhost/rumah-sakit/themes/admin/js/scripts.js?v=2023-01-01 00:00:01&t=e9aaf94ba71f"></script>
-  
+  <script src="http://localhost/rumah-sakit/themes/admin/js/scripts.js?v=2023-01-01 00:00:01&t=469e58149f0b"></script>
+    <script>
+    const fullscreenButton = document.getElementById('fullscreen-button');
+
+    fullscreenButton.addEventListener('click', () => {
+      if (document.fullscreenElement) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      } else {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        }
+      }
+    });
+  </script>
+  <script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 50) {
+        navbar.style.backgroundColor = 'white';
+        navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.backgroundColor = 'transparent';
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  </script>
 </body>
 
 </html>
