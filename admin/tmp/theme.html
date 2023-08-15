@@ -1,0 +1,62 @@
+<article class="row">
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Default</h3>
+            </div>
+            <div class="panel-body">
+                <div class="theme-preview">
+                    <img src="http://localhost/rumah-sakit/themes/default/preview.png" class="img-responsive">
+                </div>
+            </div>
+            <div class="panel-footer">
+                <table class="table">
+                    <tr>
+                        <th>Pembuat</th>
+                        <td>Basoro <a href="mailto:info@mlite.id">info@mlite.id</a></td>
+                    </tr>
+                    <tr>
+                        <th>Versi</th>
+                        <td>1.1</td>
+                    </tr>
+                </table>
+                                <a href="#" class="btn btn-primary btn-block btn-xs disabled">Aktif</a>
+                            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Sunting</h3>
+            </div>
+            <div class="panel-body">
+                        		<form name="selectFile" action="/rumah-sakit/admin/settings/theme/default?t=01050b3a854d" method="GET">
+                    <div class="form-group">
+            			<select name="file" class="form-control" onchange="window.location.href=this.value;" data-use-search="true">
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/6b8ed7e468c3debdeb6021d90af7c4ab?t=01050b3a854d" >/themes/default/canvas.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/02d77a967b2f3f726f63ace7f46e58e9?t=01050b3a854d" >/themes/default/fullpage.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/c7e843c00387c628cb26cf47d5554dff?t=01050b3a854d" >/themes/default/homepage.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/d802bedf7042fcd6fff494562e1c9a8a?t=01050b3a854d" >/themes/default/index.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/39135ed065d63e75dd04bcda1f483051?t=01050b3a854d" >/themes/default/news.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/da1cb9120ad690f91ddeb484481bccaf?t=01050b3a854d" >/themes/default/post.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/82109137c9f250fd209c167ac1a94ba4?t=01050b3a854d" >/themes/default/inc/footer.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/932f7670d2c199363e47a8c390dc1509?t=01050b3a854d" >/themes/default/inc/header.html</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/63bc24b081dd29b215c43aa6398b780c?t=01050b3a854d" >/themes/default/css/style.css</option>
+            				            					<option value="http://localhost/rumah-sakit/admin/settings/theme/default/7f486276c730f72e8cb9e5378e375c9b?t=01050b3a854d" >/themes/default/js/theme.js</option>
+            				            			</select>
+            			<input type="hidden" name="t" value="01050b3a854d">
+                    </div>
+        		</form>
+
+                <form name="editor" action="/rumah-sakit/admin/settings/theme/default?t=01050b3a854d" method="POST">
+                    <div class="form-group">
+                        <textarea name="content" rows="20" class="form-control" id="editor">*bracket**dollar*page.content*/bracket*
+</textarea>
+                        <script>$("#editor").markItUp(markItUp_html).highlight({whiteSpace: 'pre', lang: 'html'});</script>
+                    </div>
+                    <input type="submit" name="save" class="btn btn-primary" value="Simpang" />
+                </form>
+            </div>
+        </div>
+    </div>
+</article>

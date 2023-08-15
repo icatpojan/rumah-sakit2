@@ -1,0 +1,665 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pintar Sehat - {$module.name}</title>
+  <link rel="icon" href="{?=url()?}/{$mlite.logo}" type="image/x-icon">
+  <link href="{$mlite.path}/assets/css/{$mlite.theme_admin}.min.css" rel="stylesheet">
+  <link href="{$mlite.path}/assets/css/animate.min.css" rel="stylesheet">
+  <link href="{?=url(THEMES.'/admin/css/style.css?v='.$mlite.version)?}" rel="stylesheet">
+  <link href="{$mlite.path}/assets/css/font-awesome.css" rel="stylesheet">
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="{$mlite.path}/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Pintar Sehat" />
+  <meta name="apple-mobile-web-app-title" content="Pintar Sehat" />
+  <meta name="theme-color" content="#222" />
+  <meta name="msapplication-navbutton-color" content="#222" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="green-translucent" />
+  <meta name="msapplication-starturl" content="{$mlite.path}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" sizes="128x128" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="apple-touch-icon" sizes="128x128" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="icon" sizes="192x192" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="apple-touch-icon" sizes="192x192" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="icon" sizes="256x256" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="apple-touch-icon" sizes="256x256" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="icon" sizes="384x384" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="apple-touch-icon" sizes="384x384" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="icon" sizes="512x512" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="apple-touch-icon" sizes="512x512" href="{?=url()?}/{$mlite.logo}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    crossorigin="anonymous">
+  <!-- End PWA Support -->
+  <script src="{$mlite.path}/assets/jscripts/jquery.min.js?v={$mlite.version}"></script>
+  <script src="{$mlite.path}/assets/jscripts/bootstrap.min.js?v={$mlite.version}"></script>
+  <script src="{$mlite.path}/assets/jscripts/bootbox.min.js?v={$mlite.version}"></script>
+  <script src="{$mlite.path}/assets/jscripts/html.sortable.min.js?v={$mlite.version}"></script>
+  <script src="{$mlite.path}/assets/jscripts/tinynav.min.js?v={$mlite.version}"></script>
+  <script src="{?=url(THEMES.'/admin/js/kalypto.min.js?v='.$mlite.version)?}"></script>
+  <script src="{?=url(THEMES.'/admin/js/selectator.js?v='.$mlite.version)?}"></script>
+  <script>
+    var mlite = {
+      token: "{$_SESSION['token']}",
+      url: "{?=url()?}",
+      admin: "{?=ADMIN?}"
+    };
+  </script>
+  {loop: $mlite.header}{$value}{/loop}
+  <style>
+    /* Gaya dasar body */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* Gaya untuk sidebar */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #000080;
+      /* Warna biru */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+      color: white;
+    }
+
+    /* Gaya untuk item menu dalam sidebar */
+    .sidebar a {
+      margin-right: 10px;
+      padding: 15px;
+      text-decoration: none;
+      color: white;
+      display: block;
+      transition: background-color 0.3s;
+      display: flex;
+      margin-left: 10px;
+      /* Mengatur item menu dalam satu baris */
+      align-items: center;
+      border-radius: 20px;
+      /* Pusatkan item menu secara vertikal */
+    }
+
+    /* Gaya tautan aktif di sidebar */
+    .sidebar a:hover {
+      margin-right: 10px;
+      color: #000080;
+      border-radius: 10px;
+      background-color: white;
+      /* Warna biru lebih gelap untuk item aktif */
+    }
+
+    /* Gaya untuk ikon menu */
+    .sidebar a i {
+      margin-right: 10px;
+      /* Jarak antara ikon dan teks */
+    }
+
+    /* Gaya untuk wrapper konten */
+    .content-wrapper {
+      margin-left: 250px;
+      /* Lebar sidebar */
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    /* Gaya untuk judul halaman */
+    .page-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      padding: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      display: none;
+      position: absolute;
+      top: -500%;
+      left: 100%;
+      background-color: white;
+      min-width: 200px;
+    }
+
+    .dropdown-content2 {
+      padding: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      display: none;
+      position: absolute;
+      top: -10%;
+      left: 100%;
+      background-color: white;
+      min-width: 200px;
+    }
+
+    .dropdown-content a,
+    .dropdown-content2 a {
+      color: grey;
+      font-weight: 500;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .dropdown-content a:hover,
+    .dropdown-content2 a:hover {
+      color: black;
+      font-weight: 500;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:hover .dropdown-content2 {
+      display: block;
+    }
+
+    .menolak-gelap:hover {
+      background: transparent !important;
+    }
+
+    .menolak-terang:hover {
+      background: #000080 !important;
+    }
+
+    .scroll-navbar {
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .panel {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      border-radius: 10px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div id="preload-overlay">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+  </div>
+  <div id="wrapper">
+
+    <div id="navbar-wrapper">
+      <nav class="navbar navbar-inverse mobile-fixed-top hidden-lg hidden-md" style="z-index:1000;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#">
+              <img class="logo" src="{?=url()?}/{$mlite.logo}" alt="">
+              <span class="navbar-brand truncated"> {$mlite.nama_instansi} </span>
+            </a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{?=url(ADMIN.'/logout')?}" class="fa fa-power-off" data-toggle="tooltip"
+                data-placement="bottom" title="Keluar"></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top visible-lg visible-md" style="margin-bottom:0;font-size:16px;background: transparent;position:fixed;margin-left:
+      250px;border-bottom:none;" id="navbar">
+      <div class="container-fluid">
+        <!-- <ul class="nav navbar-nav">
+          <li><a href="#" data-toggle="modal" data-target="#menuModal"><img class="img-responsive"
+                src="{?= url('/assets/img/icon-home.png') ?}"
+                style="display:inline-block;height:24px;margin-top:-2px;margin-right:5px;" alt=""> Menu</a></li>
+          {if: $mlite.module_pasien}
+          <li><a href="{?=url([ADMIN, 'pasien', 'manage'])?}" {if: !$mlite.pasien_access || !$mlite.module_pasien}
+              class="btn disabled" {/if}> <img class="menu_icon" src="{?= url('/assets/img/icon-pasien.png') ?}" alt="">
+              Pasien</a></li>
+          {/if}
+          {if: $this->core->getUserInfo('role', !empty($_SESSION['mlite_user']) ? $_SESSION['mlite_user'] : 1) ==
+          'medis'}
+          <li><a href="{?=url([ADMIN, 'dokter_igd', 'manage'])?}" {if: !$mlite.dokter_igd_access} class="btn disabled"
+              {/if}> <img class="menu_icon" src="{?= url('/assets/img/icon-igd.png') ?}" alt=""> Dokter IGD</a></li>
+          <li><a href="{?=url([ADMIN, 'dokter_ralan', 'manage'])?}" {if: !$mlite.dokter_ralan_access}
+              class="btn disabled" {/if}> <img class="menu_icon" src="{?= url('/assets/img/icon-ralan.png') ?}" alt="">
+              Dokter Ralan</a></li>
+          <li><a href="{?=url([ADMIN, 'dokter_ranap', 'manage'])?}" {if: !$mlite.dokter_ranap_access}
+              class="btn disabled" {/if}> <img class="menu_icon" src="{?= url('/assets/img/icon-ranap.png') ?}" alt="">
+              Dokter Ranap</a></li>
+          {else}
+          {if: $mlite.module_igd}
+          <li><a href="{?=url([ADMIN, 'igd', 'manage'])?}" {if: !$mlite.igd_access || !$mlite.module_igd}
+              class="btn disabled" {/if}> <img class="menu_icon" src="{?= url('/assets/img/icon-igd.png') ?}" alt="">
+              IGD</a></li>
+          {/if}
+          {if: $mlite.module_rawat_jalan}
+          <li><a href="{?=url([ADMIN, 'rawat_jalan', 'manage'])?}" {if: !$mlite.rawat_jalan_access ||
+              !$mlite.module_rawat_jalan} class="btn disabled" {/if}> <img class="menu_icon"
+              src="{?= url('/assets/img/icon-ralan.png') ?}" alt=""> Rawat Jalan</a></li>
+          {/if}
+          {if: $mlite.module_rawat_inap}
+          <li><a href="{?=url([ADMIN, 'rawat_inap', 'manage'])?}" {if: !$mlite.rawat_inap_access ||
+              !$mlite.module_rawat_inap} class="btn disabled" {/if}> <img class="menu_icon"
+              src="{?= url('/assets/img/icon-ranap.png') ?}" alt=""> Rawat Inap</a></li>
+          {/if}
+          {/if}
+          {if: $mlite.cek_anjungan}
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="menu_icon"
+                src="{?= url('/assets/img/icon-informasi.png') ?}" alt=""> Anjungan
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              {if: $mlite.presensi}
+              <li><a href="{?=url()?}/anjungan/presensi" target="_blank">Presensi Pegawai</a></li>
+              <li role="separator" class="divider"></li>
+              {/if}
+              <li><a href="#">Rawat Jalan</a></li>
+              <li><a href="#">Rawat Inap</a></li>
+              <li><a href="#">Laboratorium</a></li>
+              <li><a href="#">Radiologi</a></li>
+              <li><a href="{?=url()?}/anjungan/bed" target="_blank">Ketersediaan Kamar</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{?=url()?}/anjungan/pasien" target="_blank">Anjungan Pasien Mandiri</a></li>
+              <li><a href="{?=url()?}/anjungan/sep" target="_blank">Anjungan Cetak SEP</a></li>
+              <li><a href="{?=url()?}/anjungan/loket" target="_blank">Antrian Loket</a></li>
+              <li><a href="{?=url()?}/anjungan/laboratorium" target="_blank">Antrian Laboratorium</a></li>
+              <li><a href="{?=url()?}/anjungan/apotek" target="_blank">Antrian Apotek</a></li>
+              <li><a href="{?=url()?}/anjungan/poli" target="_blank">Antrian Poliklinik</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{?=url()?}/anjungan/poli/all" target="_blank">Antrian Poliklinik Alternatif</a></li>
+              {loop: $mlite.poliklinik}
+              {if: $value.attr == 'selected'}
+              <li><a href="{?=url()?}/anjungan/poli/{$value.kd_poli}" target="_blank">Antrian {$value.nm_poli}</a></li>
+              {/if}
+              {/loop}
+            </ul>
+          </li>
+          {/if}
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="menu_icon"
+                src="{?= url('/assets/img/icon-about.png') ?}" alt=""> Pintar Sehat
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-toggle="modal" data-target="#tentangModal"> Tentang</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#bantuanModal"> Bantuan</a></li>
+              <li><a href="{?=url(ADMIN.'/logout')?}"> Logout</a></li>
+              <li role="separator" class="divider"></li>
+              {loop: $mlite.nav}
+              <li {if: $value.subnav} class="dropdown-submenu" {/if}> <a href="{$value.url}">{$value.name}</a>
+                {if: !empty($value.subnav)}
+                <ul class="dropdown-menu">
+                  {loop: $value.subnav}
+                  <li><a href="{$value.url}">{$value.name}</a></li>
+                  {/loop}
+                </ul>
+                {/if}
+              </li>
+              {/loop}
+            </ul>
+          </li>
+        </ul> -->
+        <style>
+          .navbar-nav:hover {
+            background: transparent !important;
+          }
+        </style>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a id="fullscreen-button" class="menolak-gelap">
+              <i class="fas fa-expand-arrows-alt" style="color: grey;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{?=url(ADMIN.'/logout')?}" class="menolak-gelap" data-toggle="tooltip" data-placement="bottom"
+              title="Keluar" style="color: black;"> <img src="{?=url()?}/themes/admin/img/logo.png" alt=""
+                style="border-radius: 50px;width:20px;"> {?= $mlite.username ?}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+
+
+    {if: $mlite.notify}
+    <div id="notify" class="alert alert-{$mlite.notify.type} alert-dismissible fade in" role="alert"
+      style="margin-left: 250px;">
+      {$mlite.notify.text}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {/if}
+
+    {if: $module.name == 'Dashboard'}
+    {$module.content}
+    {else}
+    <section id="content-wrapper">
+      <div class="container-fluid content-wrapper">
+        <div class="row">
+          <div class="col-lg-12" style="margin-bottom:50px !important;">
+            <!-- <h2 class="content-title" style="color: #000080;">{if: $module.name == 'Rawat Jalan' | $module.name ==
+              'Pengguna'}<a href="{?=url([ADMIN,$module.dir,'index'])?}"
+                style="color: #000080;">{$module.name}</a>{else}<a href="{?=url([ADMIN,$module.dir,'manage'])?}"
+                style="color: #000080;">{$module.name}</a>{/if} -->
+            <!-- <a
+                href="{?=url([ADMIN,'dashboard','help',$module.dir])?}" data-toggle="modal"
+                data-target="#moduleModal">
+                <span class="pull-right">
+                  <small class="hidden-xs">Help</small> <i
+                    class="fa fa-question-circle-o" aria-hidden="true"></i></span></a> -->
+            </h2>
+            {$module.content}
+          </div>
+        </div>
+      </div>
+    </section>
+    {/if}
+    <div class="sidebar" style="position: fixed;">
+      <a href="#" class="menolak-terang">
+        <img class="logo" src="{?=url()?}/{$mlite.logo}" alt="" style="width: 60px;">
+        <h4 style="color: white;">PintarSehat</h4>
+      </a>
+      <a href="#" data-toggle="modal" data-target="#menuModal">
+        <i class="fas fa-home"></i> Menu
+      </a>
+      {if: $mlite.module_pasien}
+      <a href="{?=url([ADMIN, 'pasien', 'manage'])?}" {if: !$mlite.pasien_access || !$mlite.module_pasien} class="btn"
+        {/if}> <i class="fas fa-user"></i> Pasien
+      </a>
+      {/if}
+      {if: $this->core->getUserInfo('role', !empty($_SESSION['mlite_user']) ? $_SESSION['mlite_user'] : 1) == 'medis'}
+      <a href="{?=url([ADMIN, 'dokter_igd', 'manage'])?}" {if: !$mlite.dokter_igd_access} class="btn disabled" {/if}> <i
+        class="fas fa-hospital"></i> Dokter IGD
+      </a>
+      <a href="{?=url([ADMIN, 'dokter_ralan', 'manage'])?}" {if: !$mlite.dokter_ralan_access} class="btn disabled"
+        {/if}> <i class="fas fa-hospital"></i> Dokter Ralan
+      </a>
+      <a href="{?=url([ADMIN, 'dokter_ranap', 'manage'])?}" {if: !$mlite.dokter_ranap_access} class="btn disabled"
+        {/if}> <i class="fas fa-hospital"></i> Dokter Ranap
+      </a>
+      {else}
+      {if: $mlite.module_igd}
+      <a href="{?=url([ADMIN, 'igd', 'manage'])?}" {if: !$mlite.igd_access || !$mlite.module_igd} class="btn disabled"
+        {/if}> <i class="fas fa-medkit"></i> IGD
+      </a>
+      {/if}
+      {if: $mlite.module_rawat_jalan}
+      <a href="{?=url([ADMIN, 'rawat_jalan', 'manage'])?}" {if: !$mlite.rawat_jalan_access ||
+        !$mlite.module_rawat_jalan} class="btn disabled" {/if}> <i class="fas fa-wheelchair"></i> Rawat Jalan
+      </a>
+      {/if}
+      {if: $mlite.module_rawat_inap}
+      <a href="{?=url([ADMIN, 'rawat_inap', 'manage'])?}" {if: !$mlite.rawat_inap_access || !$mlite.module_rawat_inap}
+        class="btn disabled" {/if}> <i class="fas fa-bed"></i> Rawat Inap
+      </a>
+      {/if}
+      {/if}
+      {if: $mlite.cek_anjungan}
+      <div class="dropdown">
+        <a class="dropdown-toggle" href="#">
+          <i class="fas fa-desktop"></i>
+          Anjungan
+          <i class="fas fa-angle-right" style="margin-left: 100px;"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="{?=url()?}/anjungan/presensi" target="_blank">Presensi Pegawai</a>
+          <a href="#">Rawat Jalan</a>
+          <a href="#">Rawat Inap</a>
+          <a href="#">Laboratorium</a>
+          <a href="#">Radiologi</a>
+          <a href="{?=url()?}/anjungan/bed" target="_blank">Ketersediaan Kamar</a>
+          <a href="{?=url()?}/anjungan/pasien" target="_blank">Anjungan Pasien Mandiri</a>
+          <a href="{?=url()?}/anjungan/sep" target="_blank">Anjungan Cetak SEP</a>
+          <a href="{?=url()?}/anjungan/loket" target="_blank">Antrian Loket</a>
+          <a href="{?=url()?}/anjungan/laboratorium" target="_blank">Antrian Laboratorium</a>
+          <a href="{?=url()?}/anjungan/apotek" target="_blank">Antrian Apotek</a>
+          <a href="{?=url()?}/anjungan/poli" target="_blank">Antrian Poliklinik</a>
+          <a href="{?=url()?}/anjungan/poli/all" target="_blank">Antrian Poliklinik Alternatif</a>
+          {loop: $mlite.poliklinik}
+          {if: $value.attr == 'selected'}
+          <a href="{?=url()?}/anjungan/poli/{$value.kd_poli}" target="_blank">Antrian {$value.nm_poli}</a>
+          {/if}
+          {/loop}
+        </div>
+      </div>
+      {/if}
+      <div class="dropdown">
+        <a class="dropdown-toggle" href="#">
+          <i class="fas fa-stethoscope"></i> PintarSehat
+          <i class="fas fa-angle-right" style="margin-left: 85px;"></i>
+        </a>
+        <div class="dropdown-content2">
+          <a href="#" data-toggle="modal" data-target="#tentangModal"> Tentang</a>
+          <a href="#" data-toggle="modal" data-target="#bantuanModal"> Bantuan</a>
+          <a href="{?=url(ADMIN.'/logout')?}"> Logout</a>
+          <!-- {loop: $mlite.nav}
+          {if: !empty($value.subnav)}
+          {loop: $value.subnav}
+          <a href="{$value.url}">{$value.name}</a>
+          {/loop}
+          {/if}
+          {/loop} -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="" style="padding-bottom:30px;z-index:1000;display:none;">
+    <p class="pull-right">
+      Made with <i class="fa fa-heart text-danger"></i> by <a href="https://basoro.id/" target="_blank"><b>drg. F.
+          Basoro</b>.</a>
+      {$mlite.powered}.
+    </p>
+    <p><i class="fa fa-fw fa-calendar"></i> <span>{$mlite.tanggal}</span> <i class="fa fa-fw fa-clock-o"></i><span
+        id="clock"></span> <i class="fa fa-fw fa-user"></i> <span>{?= sprintf('Login sebagai <strong>%s</strong>',
+        $mlite.username) ?}</span></p>
+  </footer>
+
+  {if: $this->core->getUserInfo('role') == 'medis'}
+  <div class="icon-bar hidden-lg hidden-md">
+    <a href="#" data-toggle="modal" data-target="#menuModal"><i class="fa fa-home"></i></a>
+    <a href="{?=url([ADMIN, 'pasien', 'manage'])?}" {if: !$mlite.pasien_access} class="btn disabled" {/if}> <i
+      class="fa fa-users"></i></a>
+    <a href="{?=url([ADMIN, 'dokter_igd', 'manage'])?}" {if: !$mlite.dokter_igd_access} class="btn disabled" {/if}> <i
+      class="fa fa-ambulance"></i></a>
+    <a href="{?=url([ADMIN, 'dokter_ralan', 'manage'])?}" {if: !$mlite.dokter_ralan_access} class="btn disabled" {/if}>
+      <i class="fa fa-wheelchair"></i></a>
+    <a href="{?=url([ADMIN, 'dokter_ranap', 'manage'])?}" {if: !$mlite.dokter_ranap_access} class="btn disabled" {/if}>
+      <i class="fa fa-hotel"></i></a>
+  </div>
+  {else}
+  <div class="icon-bar hidden-lg hidden-md">
+    <a href="#" data-toggle="modal" data-target="#menuModal"><i class="fa fa-home"></i></a>
+    <a href="{?=url([ADMIN, 'pasien', 'manage'])?}" {if: !$mlite.pasien_access} class="btn disabled" {/if}> <i
+      class="fa fa-users"></i></a>
+    <a href="{?=url([ADMIN, 'igd', 'manage'])?}" {if: !$mlite.igd_access} class="btn disabled" {/if}> <i
+      class="fa fa-ambulance"></i></a>
+    <a href="{?=url([ADMIN, 'rawat_jalan', 'manage'])?}" {if: !$mlite.rawat_jalan_access} class="btn disabled" {/if}> <i
+      class="fa fa-wheelchair"></i></a>
+    <a href="{?=url([ADMIN, 'rawat_inap', 'manage'])?}" {if: !$mlite.rawat_inap_access} class="btn disabled" {/if}> <i
+      class="fa fa-hotel"></i></a>
+  </div>
+  {/if}
+
+  <!-- Modal -->
+  <div class="modal fade" id="moduleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
+  <div class="modal fade modal-fullscreen" id="menuModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 0px #fff solid;">
+          <div class="row">
+            <div class="col col-md-12">
+              <div class="input-group">
+                <input type="text" id="cari_modul" minlength="3" class="form-control" placeholder="Pencarian modul..."
+                  required>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" data-dismiss="modal"><i
+                      class="fa fa-close"></i></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" style="height: 90vh;overflow-y: auto;">
+          <div class="row">
+            <ul id="list_modul" class="modules" style="padding:0;margin:0;">
+              {loop: $mlite.nav}
+              <li class="module" data-module="{$value.dir}">
+                <div class="panel panel-default" style="border-radius: 30px;">
+                  <a href="{$value.url}" class="panel-body text-center" style="border-radius: 30px;">
+                    <div class="panel-thumb" style="background: white;border-radius: 30px;">
+                      <i class="fa fa-{$value.icon}"></i>
+                      <div class="desc">
+                        {$value.desc}
+                      </div>
+                    </div>
+                    <h4><b>{$value.name}</b></h4>
+                  </a>
+                </div>
+              </li>
+              {/loop}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="bantuanModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Bantuan Pintar Sehat</h4>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="tentangModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xs" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Tentang Pintar Sehat</h4>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="{?=url()?}/{$mlite.logo}" width="50px" alt="">
+            <h4>
+              Pintar Sehat
+              <div class="">
+                <small>
+                  {$mlite.version}
+                </small>
+              </div>
+            </h4>
+            <p>The awesome SIMRS Khanza alternate<br>
+              <b>Successor of KhanzaLITE</b><br>
+              Clean, Light and Modular Medical Management Systems</p>
+            <p>Thank you to our main sponsors <span class="badge badge-info badge-style-light">RSUD H. Damanhuri
+                Barabai</span> and <span class="badge badge-warning badge-style-light">RS Aura Syifa Kediri</span>. Also
+              Klinik Utama Cahaya Imani Kandangan, RSIA Muntilan Magelang, RSU Ceria Kandangan, RSUD Datu Sanggul
+              Rantau, RSUD Daha Sejahtera Kandangan and other hospitals that we cannot mention one by one. Also
+              contributors who have been involved in development.</p>
+            <p>Email: dentix.id@gmail.com - Telegram: @basoro</p>
+            <p>Copyright © 2018 - {?=date('Y')?}</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PWA Support -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("{$mlite.path}/service-worker.js")
+          .then((swReg) => {
+            //console.log("Service Worker is registered", swReg);
+          })
+          .catch((err) => {
+            //console.error("Service Worker Error", err);
+          });
+      });
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#cari_modul").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#list_modul li").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    $("#moduleModal").on('hidden.bs.modal', function (e) {
+      $("#moduleModal iframe").attr("src", $("#moduleModal iframe").attr("src"));
+    });
+  </script>
+  <!-- End PWA Support -->
+  <script src="{?= url(THEMES.'/admin/js/scripts.js?v='.$mlite.version) ?}"></script>
+  {loop: $mlite.footer}{$value}{/loop}
+  <script>
+    const fullscreenButton = document.getElementById('fullscreen-button');
+
+    fullscreenButton.addEventListener('click', () => {
+      if (document.fullscreenElement) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      } else {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        }
+      }
+    });
+  </script>
+  <script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 50) {
+        navbar.style.backgroundColor = 'white';
+        navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.backgroundColor = 'transparent';
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  </script>
+  <script>
+    const backButton = document.getElementById('backButton');
+
+    backButton.addEventListener('click', () => {
+      window.history.back();
+    });
+  </script>
+</body>
+
+</html>

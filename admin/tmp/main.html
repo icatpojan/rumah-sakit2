@@ -320,14 +320,14 @@ Kamu bisa membodohi semua orang, tetapi kamu tidak bisa membohongi pikiranmu *</
 
       var base64image = document.getElementById("imageprev").src;
 
-      Webcam.upload(base64image, 'http://localhost/rumah-sakit/admin/dashboard/upload?t=a718f084b1e0&shift=' + getshift, function (code, text) {
+      Webcam.upload(base64image, 'http://localhost/rumah-sakit/admin/dashboard/upload?t=01050b3a854d&shift=' + getshift, function (code, text) {
       });
 
       Webcam.reset();
 
       navigator.geolocation.getCurrentPosition(
         function (position) {
-          $.post('http://localhost/rumah-sakit/admin/dashboard/geolocation?t=a718f084b1e0', { lat: position.coords.latitude, lng: position.coords.longitude });
+          $.post('http://localhost/rumah-sakit/admin/dashboard/geolocation?t=01050b3a854d', { lat: position.coords.latitude, lng: position.coords.longitude });
         },
         function error(err) { },
         { enableHighAccuracy: true, timeout: 5000 }
