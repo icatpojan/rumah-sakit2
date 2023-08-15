@@ -187,11 +187,14 @@
     .btn {
       border-radius: 10px;
     }
+    
   </style>
 </head>
 
 <body>
-
+  <div id="preload-overlay">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+  </div>
   <div id="wrapper">
 
     <div id="navbar-wrapper">
@@ -648,6 +651,13 @@
         navbar.style.backgroundColor = 'transparent';
         navbar.style.boxShadow = 'none';
       }
+    });
+  </script>
+  <script>
+    const backButton = document.getElementById('backButton');
+
+    backButton.addEventListener('click', () => {
+      window.history.back();
     });
   </script>
 </body>

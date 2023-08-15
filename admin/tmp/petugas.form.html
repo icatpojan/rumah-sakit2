@@ -1,0 +1,129 @@
+<div id="form">
+  <div class="row col-md-5 m-r-md">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Kode Petugas</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="nip">
+                                  <option value="DR001" selected>dr. Ataaka Muhammad</option>
+                                  <option value="DR2">siapa</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Nama Petugas</label>
+            <div class="col-sm-9">
+              <input type="text" name="nama" class="form-control" value="dr. Ataaka Muhammad">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Jenis Kelamin</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="jk">
+                <option value="L" selected>Laki-Laki</option>
+                <option value="P">Perempuan</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Tempat Lahir</label>
+            <div class="col-sm-9">
+              <input type="text" name="tmp_lahir" class="form-control" value="Barabai">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Tanggal Lahir</label>
+            <div class="col-sm-9">
+              <input type="text" name="tgl_lahir" class="form-control tanggal" value="2020-12-01">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Gol. Darah</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="gol_darah">
+                                <option value="-">-</option>
+                                <option value="A" selected>A</option>
+                                <option value="B">B</option>
+                                <option value="O">O</option>
+                                <option value="AB">AB</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Agama</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="agama">
+                                <option value="ISLAM">ISLAM</option>
+                                <option value="KRISTEN">KRISTEN</option>
+                                <option value="PROTESTAN">PROTESTAN</option>
+                                <option value="HINDU">HINDU</option>
+                                <option value="BUDHA">BUDHA</option>
+                                <option value="KONGHUCU">KONGHUCU</option>
+                                <option value="KEPERCAYAAN">KEPERCAYAAN</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Almt. Tinggal</label>
+            <div class="col-sm-9">
+              <textarea name="alamat" class="form-control" col="4">-</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">No. Telp</label>
+            <div class="col-sm-9">
+              <input type="text" name="no_telp" class="form-control" value="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Stts. Nikah</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="stts_nikah">
+                                <option value="BELUM MENIKAH">BELUM MENIKAH</option>
+                                <option value="MENIKAH" selected>MENIKAH</option>
+                                <option value="JANDA">JANDA</option>
+                                <option value="DUDHA">DUDHA</option>
+                                <option value="JOMBLO">JOMBLO</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Jabatan</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="kd_jbtn">
+                                  <option value="-" selected>-</option>
+                              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Status</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="status">
+                <option value="1" selected>Aktif</option>
+                <option value="0">Tidak Aktif</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-b-xl clearfix">
+      <button type="button" name="button" class="btn btn-primary" id="simpan"><i class="fa fa-save"></i><span class="hidden-xs"> Simpan</span></button>
+      <button type="button" name="button" class="btn btn-danger" id="hapus"><i class="fa fa-trash"></i><span class="hidden-xs"> Hapus</span></button>
+      <button type="button" name="button" class="btn btn-warning" id="batal"><i class="fa fa-close"></i><span class="hidden-xs"> Batal</span></button>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('select').selectator();
+</script>
+<script type="text/javascript">
+   $(function () {
+       $('.tanggal').datetimepicker({
+         format: 'YYYY-MM-DD',
+         locale: 'id'
+       });
+   });
+</script>

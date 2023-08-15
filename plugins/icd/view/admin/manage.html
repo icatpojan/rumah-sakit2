@@ -2,7 +2,7 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Kelola ICD 9</h3>
+        <h3 class="panel-title"><button id="backButton"><i class="fas fa-angle-left"></i></button> Kelola ICD 9</h3>
       </div>
       <div class="panel-body">
         <div class="table-responsive no-margin">
@@ -21,7 +21,7 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Kelola ICD 10</h3>
+        <h3 class="panel-title"><button id="backButton"><i class="fas fa-angle-left"></i></button> Kelola ICD 10</h3>
       </div>
       <div class="panel-body">
         <div class="table-responsive no-margin">
@@ -40,24 +40,28 @@
 </div>
 
 <script type="text/javascript">
-
-  $(document).ready(function() {
-      $('#icd9_json').DataTable( {
-          "processing": true,
-          "ajax": "{?=url([ADMIN,'icd','icd9'])?}",
-          "columns": [
-              { "data": "kode" },
-              { "data": "nama" }
-          ]
-      } );
-      $('#icd10_json').DataTable( {
-          "processing": true,
-          "ajax": "{?=url([ADMIN,'icd','icd10'])?}",
-          "columns": [
-              { "data": "kode" },
-              { "data": "nama" }
-          ]
-      } );
-  } );
-
+  $(document).ready(function () {
+    $('#icd9_json').DataTable({
+      "processing": true,
+      "ajax": "{?=url([ADMIN,'icd','icd9'])?}",
+      "columns": [{
+          "data": "kode"
+        },
+        {
+          "data": "nama"
+        }
+      ]
+    });
+    $('#icd10_json').DataTable({
+      "processing": true,
+      "ajax": "{?=url([ADMIN,'icd','icd10'])?}",
+      "columns": [{
+          "data": "kode"
+        },
+        {
+          "data": "nama"
+        }
+      ]
+    });
+  });
 </script>

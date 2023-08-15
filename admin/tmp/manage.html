@@ -1,130 +1,472 @@
-<div class="row" style="margin-bottom:100px;">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <div class="btn-group pull-right" style="margin-top:-8px;">
-          <span class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
-            <div id="btn_cetak" data-toggle="modal"><i class="fa fa-print"></i><span class="hidden-xs"> Cetak</span></div>
+<div class="row m-b-xl">
+    <div class="col col-md-12">
+        <div class="input-group">
+          <input type="text" id="cari_submodul" minlength="3" class="form-control" placeholder="Pencarian master data..." required>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"  data-dismiss="modal"><i class="fa fa-close"></i></button>
           </span>
         </div>
-        <h3 class="panel-title">Kelola Pasien</h3>
-      </div>
-      <div class="panel-body">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
         <div class="row">
-          <div id="notif"></div>
+            <ul id="list_submodul" class="modules" style="padding:0;margin:0;">
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/dokter?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master dokter                                </div>
+                            </div>
+                            <h4><b>Dokter</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/petugas?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master petugas                                </div>
+                            </div>
+                            <h4><b>Petugas</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/poliklinik?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master poliklinik                                </div>
+                            </div>
+                            <h4><b>Poliklinik</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/bangsal?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master bangsal                                </div>
+                            </div>
+                            <h4><b>Bangsal</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/kamar?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master kamar                                </div>
+                            </div>
+                            <h4><b>Kamar</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/databarang?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master data barang                                </div>
+                            </div>
+                            <h4><b>Data Barang</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/jnsperawatan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master jenis perawatan rawat jalan                                </div>
+                            </div>
+                            <h4><b>Perawatan Rawat Jalan</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/jnsperawataninap?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master jenis perawatan rawat inap                                </div>
+                            </div>
+                            <h4><b>Perawatan Rawat Inap</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/jnsperawatanlab?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master jenis perawatan laboratorium                                </div>
+                            </div>
+                            <h4><b>Perawatan Laboratorium</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/jnsperawatanradiologi?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master jenis perawatan radiologi                                </div>
+                            </div>
+                            <h4><b>Perawatan Radiologi</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/bahasa?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master bahasa                                </div>
+                            </div>
+                            <h4><b>Bahasa</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/cacat?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master cacat fisik                                </div>
+                            </div>
+                            <h4><b>Cacat Fisik</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/suku?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master suku bangsa                                </div>
+                            </div>
+                            <h4><b>Suku Bangsa</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/perusahaan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master perusahaan pasien                                </div>
+                            </div>
+                            <h4><b>Perusahaan Pasien</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/penjab?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master penanggung jawab                                </div>
+                            </div>
+                            <h4><b>Penanggung Jawab</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/golonganbarang?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master golongan barang                                </div>
+                            </div>
+                            <h4><b>Golongan Barang</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/industrifarmasi?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master industri farmasi                                </div>
+                            </div>
+                            <h4><b>Industri Farmasi</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/jenis?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master jenis barang                                </div>
+                            </div>
+                            <h4><b>Jenis Barang</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/kategoribarang?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master kategori barang                                </div>
+                            </div>
+                            <h4><b>Kategori Barang</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/kategoripenyakit?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master kategori penyakit                                </div>
+                            </div>
+                            <h4><b>Kategori Penyakit</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/kategoriperawatan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master kategori perawatan                                </div>
+                            </div>
+                            <h4><b>Kategori Perawatan</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/kodesatuan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master kode satuan                                </div>
+                            </div>
+                            <h4><b>Kode Satuan</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/masteraturanpakai?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master aturan pakai                                </div>
+                            </div>
+                            <h4><b>Master Aturan Pakai</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/masterberkasdigital?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master berkas digital                                </div>
+                            </div>
+                            <h4><b>Master Berkas Digital</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/spesialis?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master spesialis                                </div>
+                            </div>
+                            <h4><b>Spesialis</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/bank?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master bank                                </div>
+                            </div>
+                            <h4><b>Bank</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/bidang?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master bidang                                </div>
+                            </div>
+                            <h4><b>Bidang</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/departemen?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master departemen                                </div>
+                            </div>
+                            <h4><b>Departemen</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/emergencyindex?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master emergency index                                </div>
+                            </div>
+                            <h4><b>Emergency Index</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/jabatan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master jabatan                                </div>
+                            </div>
+                            <h4><b>Jabatan</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/jenjangjabatan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master jenjang jabatan                                </div>
+                            </div>
+                            <h4><b>Jenjang Jabatan</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/kelompokjabatan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master kelompok jabatan                                </div>
+                            </div>
+                            <h4><b>Kelompok Jabatan</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/pendidikan?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master pendidikan                                </div>
+                            </div>
+                            <h4><b>Pendidikan</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/resikokerja?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master resiko kerja                                </div>
+                            </div>
+                            <h4><b>Resiko Kerja</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/statuskerja?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master status kerja                                </div>
+                            </div>
+                            <h4><b>Status Kerja</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/statuswp?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master status wajib pajak                                </div>
+                            </div>
+                            <h4><b>Status Wajib Pajak</b></h4>
+                        </a>
+                    </div>
+                </li>
+                                <li class="module">
+                    <div class="panel panel-default">
+                        <a href="http://localhost/rumah-sakit/admin/master/metoderacik?t=a718f084b1e0" class="panel-body text-center">
+                            <div class="panel-thumb">
+                                <i class="fa fa-cubes"></i>
+                                <div class="desc">
+                                    Master metode racik                                </div>
+                            </div>
+                            <h4><b>Metode Racik</b></h4>
+                        </a>
+                    </div>
+                </li>
+                            </ul>
         </div>
-                <div class="row">
-          <div id="form"></div>
-        </div>
-                <div class="row">
-          <div class="col col-md-6">
-                        <div class="searchbox-input form-inline padding-bottom-lg" style="margin-top:5px;margin-bottom:15px;">
-              <div class="input-group" id="index">
-                <input class="btn btn-default" type="button" id="bukaform" value="Buka Form" />
-              </div>
-            </div>
-                      </div>
-          <div class="col col-md-6">
-            <div class="searchbox-input form-inline pull-right padding-bottom-lg" style="margin-top:5px;margin-bottom:15px;">
-              <div class="input-group">
-                <input type="text" name="cari" minlength="3" class="form-control" placeholder="Pencarian..." required>
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="display">
-          <div id="display">
-  <div class="table-responsive no-margin">
-    <table class="table table-striped no-padding" width="100%">
-      <thead>
-        <tr>
-          <th>No. RM</th>
-          <th>Nama Pasien</th>
-          <th>Tgl. Lahir</th>
-          <th>Jenis Kelamin</th>
-                    <th>Alamat</th>
-          <th>Telepon</th>
-          <th>Tgl. Daftar</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-                        <tr>
-          <td style="white-space: nowrap;">
-            <span class="dropdown-toggle" data-toggle="dropdown" data-disabled="true" aria-expanded="true"><button type="button" name="button" class="btn btn-sm btn-default">000001 <span class="caret"></span></button></span>
-            <ul class="dropdown-menu" role="menu">
-                              <li><a href="http://localhost/rumah-sakit/admin/pasien/vclaim_bynokartu/123214124/2023-08-15?t=469e58149f0b" data-toggle="modal" data-target="#asuransiModal">[BPJS] Cek Nomor Kartu</a></li>
-                <li><a href="http://localhost/rumah-sakit/admin/pasien/vclaim_bynik/1424124213/2023-08-15?t=469e58149f0b" data-toggle="modal" data-target="#asuransiModal">[BPJS] Cek Nomor KTP</a></li>
-                            <li><a href="http://localhost/rumah-sakit/admin/pasien/riwayatperawatan/000001?t=469e58149f0b" data-toggle="modal" data-target="#riwayatModal">Elektronik Rekam Medis</a></li>
-            </ul>
-          </td>
-          <td class="edit" data-no_rkm_medis="000001" style="white-space: nowrap;"><a href="http://localhost/rumah-sakit/admin/pasien/riwayatperawatan/000001?t=469e58149f0b" data-toggle="modal" data-target="#riwayatModal">zahro</a></td>
-          <td class="edit" data-no_rkm_medis="000001" style="white-space: nowrap;">2023-08-14</td>
-          <td class="edit" data-no_rkm_medis="000001" style="white-space: nowrap;">Laki-Laki</td>
-                    <td class="edit" data-no_rkm_medis="000001" style="white-space: nowrap;">kalten</td>
-          <td class="edit" data-no_rkm_medis="000001" style="white-space: nowrap;">2112512312</td>
-          <td class="edit" data-no_rkm_medis="000001" style="white-space: nowrap;">2023-08-07</td>
-          <td class="edit" data-no_rkm_medis="000001" style="white-space: nowrap;">roned@mailinator.com</td>
-        </tr>
-                      </tbody>
-    </table>
-  </div>
-  <nav class="row clearfix">
-    <div class="col-md-6">
-      <b>Jumlah: 1</b>
     </div>
-    <div class="col-md-6">
-      <ul class="pagination no-margin pull-right">
-                      <li class="disabled"><a href="#">&laquo;</a></li>
-                        <li class="disabled"><a href="#">‹</a></li>
-                <li class="disabled"><a href="#">Hal : 1 dari 1 Hal</a></li>
-                <li class="disabled"><a href="#">›</a></li>
-                        <li class="disabled"><a href="#">&raquo;</a></li>
-                    </ul>
-    </div>
-  </nav>
 </div>
-<div class="modal fade" id="asuransiModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            ...
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="riwayatModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-full" role="document">
-        <div class="modal-content">
-            ...
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="printModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            ...
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-  $(".alert-dismissible").fadeTo(3000, 500).slideUp(500);
-  $("#btn_cetak").click(function() {
-    var baseURL = mlite.url + '/' + mlite.admin;
-    var url    = baseURL + '/pasien/cetak?t=' + mlite.token;
-    var cari = $('input:text[name=cari]').val();
-
-    $.post(url, {cari: cari} ,function(data) {
-      //window.open(baseURL + '/pasien/cetakpdf?t=' + mlite.token);
-      $("#printModal").modal('show').html('<div style="text-align:center;margin:20px auto;width:90%;height:95%;"><iframe src="' + baseURL + '/pasien/cetakpdf?t=' + mlite.token + '" frameborder="no" width="100%" height="100%"></iframe></div>');
+<script>
+$(document).ready(function(){
+  $("#cari_submodul").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#list_submodul li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
-
-		return false;
   });
+});
 </script>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

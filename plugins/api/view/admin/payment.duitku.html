@@ -2,7 +2,8 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Kelola Payment Duitku</h3>
+        <h3 class="panel-title"><button id="backButton"><i class="fas fa-angle-left"></i></button> Kelola Payment Duitku
+        </h3>
       </div>
       <div class="panel-body">
         <div class="table-responsive no-margin">
@@ -30,7 +31,8 @@
                 <td>{$value.nm_pasien}</td>
                 <td>{$value.reference}</td>
                 <td>{$value.vaNumber}</td>
-                <td><button type="button" class="btn btn-xs btn-info"><a href="{$value.paymentUrl}" target="_blank">Open <i class="fa fa-money"></i></a></button></td>
+                <td><button type="button" class="btn btn-xs btn-info"><a href="{$value.paymentUrl}" target="_blank">Open
+                      <i class="fa fa-money"></i></a></button></td>
                 <td>Rp. {?= number_format($value.amount,2,',','.')?}</td>
                 <td>{$value.statusMessage}</td>
               </tr>
@@ -49,9 +51,12 @@
 </div>
 <script type="text/javascript">
   $(".alert-dismissible").fadeTo(3000, 500).slideUp(500);
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.display').DataTable({
-      "language": { "search": "", "searchPlaceholder": "Search..." },
+      "language": {
+        "search": "",
+        "searchPlaceholder": "Search..."
+      },
       "lengthChange": false,
       "scrollX": true,
       dom: "<<'data-table-title'><'datatable-search'f>><'row'<'col-sm-12'tr>><<'pmd-datatable-pagination' l i p>>"
