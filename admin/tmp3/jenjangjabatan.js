@@ -27,15 +27,13 @@ $("#form").on("click", "#simpan", function(event){
   var kode = $('input:text[name=kode]').val();
   var nama = $('input:text[name=nama]').val();
   var tnj = $('input:text[name=tnj]').val();
-  var indek = $('input:text[name=indek]').val();
 
   var url = baseURL + '/master/jenjangjabatansave?t=' + mlite.token;
 
   $.post(url,{
     kode: kode,
     nama: nama,
-    tnj: tnj,
-    indek: indek
+    tnj: tnj
   } ,function(data) {
       $("#display").show().load(baseURL + '/master/jenjangjabatandisplay?t=' + mlite.token);
       $("#form").hide();

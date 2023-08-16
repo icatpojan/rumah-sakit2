@@ -97,18 +97,40 @@
 				</tr>
 			</table>
 			<br>
-			<h4>Hasil Pemeriksaan Radiologi</h4>
+			<h4>Hasil Pemeriksaan Laboratorium</h4>
 		  <table width="740px">
 		    <thead>
 		      <tr style="border-top: 1px solid #8c8b8b">
-		        <th width="100">Pemeriksaan</th>
+		        <th width="20px;">No.</th>
+		        <th>Pemeriksaan</th>
+		        <th>Hasil</th>
+		        <th>Rujukan</th>
+		        <th>Satuan</th>
+		        <th>Keterangan</th>
 		      </tr>
 		    </thead>
 		    <tbody>
-		      						<tr>
-							<td >Thorax</td>
-						</tr>
-		      																						    </tbody>
+		      		      <tr>
+		        <td>1</td>
+		        <td colspan="6">Pemeriksaan Darah</td>
+		      </tr>
+		      		      <tr>
+		        <td></td>
+		        <td>Leukosit</td>
+		        <td>10</td>
+		        <td>10</td>
+		        <td>LK</td>
+		        <td>baik</td>
+		      </tr>
+		      		      <tr>
+		        <td></td>
+		        <td>Hemoglobin</td>
+		        <td>20</td>
+		        <td>20</td>
+		        <td>HB</td>
+		        <td>baik</td>
+		      </tr>
+		      		      		    </tbody>
 		  </table>
 			<br>
 			<table width="740px">
@@ -192,7 +214,7 @@ function KirimEmail() {
 	var xhttp = new XMLHttpRequest();
 	var email = document.getElementById("email").value;
 	var receiver = document.getElementById("receiver").value;
-	var file = "http://localhost/rumah-sakit/uploads/radiologi/20230815000003_RAD001_2023-08-15.pdf";
+	var file = "http://localhost/rumah-sakit/uploads/laboratorium/20230815000003_LAB001_2023-08-15.pdf";
 	console.log(email + " - " + receiver + " - " + file);
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -201,7 +223,7 @@ function KirimEmail() {
 			alert(data);
 		}
 	};
-	xhttp.open("POST", "http://localhost/rumah-sakit/admin/radiologi/kirimemail?t=01050b3a854d", true);
+	xhttp.open("POST", "http://localhost/rumah-sakit/admin/laboratorium/kirimemail?t=01050b3a854d", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("email=" + email + "&receiver=" + receiver + "&file=" + file);
 }
@@ -212,7 +234,7 @@ function KirimWA() {
 	var number = document.getElementById("number").value;
 	var message = document.getElementById("message").value;
 	var tipe = 'pdf';
-	var file = "http://localhost/rumah-sakit/uploads/radiologi/20230815000003_RAD001_2023-08-15.pdf";
+	var file = "http://localhost/rumah-sakit/uploads/laboratorium/20230815000003_LAB001_2023-08-15.pdf";
 	console.log(number + " - " + message);
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {

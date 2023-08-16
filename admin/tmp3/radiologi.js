@@ -199,7 +199,7 @@ $("#display").on("click", ".sep", function(event){
   var tgl_registrasi = $(this).attr("data-tgl_registrasi");
   var no_peserta = $(this).attr("data-no_peserta");
 
-  var url = baseURL + '/vclaim/bynokartu/' + no_peserta + '/2023-08-16?t=' + mlite.token;
+  var url = baseURL + '/vclaim/bynokartu/' + no_peserta + '/2023-08-15?t=' + mlite.token;
 
   $.get(url,function(data) {
     var data = JSON.parse(data);
@@ -728,8 +728,8 @@ function bersih(){
   $('input:text[name=no_rawat]').val("");
   $('input:text[name=no_rkm_medis]').val("");
   $('input:text[name=nm_pasien]').val("");
-  $('input:text[name=tgl_perawatan]').val("2023-08-16");
-  $('input:text[name=tgl_registrasi]').val("2023-08-16");
+  $('input:text[name=tgl_perawatan]').val("2023-08-15");
+  $('input:text[name=tgl_registrasi]').val("2023-08-15");
   $('input:text[name=tgl_lahir]').val("");
   $('input:text[name=jenis_kelamin]').val("");
   $('input:text[name=alamat]').val("");

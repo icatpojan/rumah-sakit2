@@ -41,7 +41,8 @@ class JenjangJabatan
           $return['form'] = [
             'kode' => '',
             'nama' => '',
-	          'tnj' => ''
+	          'tnj' => '',
+	          'indek' => ''
           ];
         }
 
